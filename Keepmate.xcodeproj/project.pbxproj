@@ -16,7 +16,7 @@
 		52A6D65222D8AEE700D0670B /* BWWalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6D65022D8AEE700D0670B /* BWWalkthroughViewController.swift */; };
 		52A6D65822D8B33B00D0670B /* BWWalkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A6D65722D8B33B00D0670B /* BWWalkthrough.storyboard */; };
 		52A6D65A22D8B77B00D0670B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52A6D65922D8B77B00D0670B /* Assets.xcassets */; };
-		52DF6ACC22FB465D00365695 /* Sunrise.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52DF6ACB22FB465D00365695 /* Sunrise.mp4 */; };
+		52EF59EB22FC68F200FC8263 /* Sunrise.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */; };
 		52F064E022F911A00023266D /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064DF22F911A00023266D /* LibraryViewController.swift */; };
 		52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064E322FB00B90023266D /* WorkoutViewController.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		52A6D65022D8AEE700D0670B /* BWWalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWWalkthroughViewController.swift; sourceTree = "<group>"; };
 		52A6D65722D8B33B00D0670B /* BWWalkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BWWalkthrough.storyboard; sourceTree = "<group>"; };
 		52A6D65922D8B77B00D0670B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52DF6ACB22FB465D00365695 /* Sunrise.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sunrise.mp4; sourceTree = "<group>"; };
+		52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Sunrise.mp4; path = Keepmate/Source/Video/Sunrise.mp4; sourceTree = "<group>"; };
 		52F064DF22F911A00023266D /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		52F064E322FB00B90023266D /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +52,7 @@
 		52A6D62F22D89F1400D0670B = {
 			isa = PBXGroup;
 			children = (
+				52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */,
 				52A6D63A22D89F1400D0670B /* Keepmate */,
 				52A6D63922D89F1400D0670B /* Products */,
 			);
@@ -68,11 +69,11 @@
 		52A6D63A22D89F1400D0670B /* Keepmate */ = {
 			isa = PBXGroup;
 			children = (
-				52DF6ACB22FB465D00365695 /* Sunrise.mp4 */,
+				52A6D65322D8AF1A00D0670B /* Utils */,
 				52A6D65922D8B77B00D0670B /* Assets.xcassets */,
 				52A6D65522D8AF4D00D0670B /* Views */,
 				52A6D65422D8AF3B00D0670B /* Models */,
-				52A6D65322D8AF1A00D0670B /* Utils */,
+				52EF59E622FC66E600FC8263 /* Source */,
 				52A6D63B22D89F1400D0670B /* AppDelegate.swift */,
 				52A6D64422D89F1500D0670B /* LaunchScreen.storyboard */,
 				52A6D64722D89F1500D0670B /* Info.plist */,
@@ -131,6 +132,21 @@
 				52A6D65722D8B33B00D0670B /* BWWalkthrough.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		52EF59E622FC66E600FC8263 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				52EF59E922FC68BC00FC8263 /* Video */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		52EF59E922FC68BC00FC8263 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,10 +212,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52EF59EB22FC68F200FC8263 /* Sunrise.mp4 in Resources */,
 				52A6D65822D8B33B00D0670B /* BWWalkthrough.storyboard in Resources */,
 				52A6D64622D89F1500D0670B /* LaunchScreen.storyboard in Resources */,
 				52A6D65A22D8B77B00D0670B /* Assets.xcassets in Resources */,
-				52DF6ACC22FB465D00365695 /* Sunrise.mp4 in Resources */,
 				52A6D64122D89F1400D0670B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
