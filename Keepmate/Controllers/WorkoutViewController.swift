@@ -9,9 +9,10 @@
 import UIKit
 import AVFoundation
 import AVKit
+import Vision
 
 
-class WorkoutViewController: UIViewController {
+class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -23,6 +24,14 @@ class WorkoutViewController: UIViewController {
     
     var playFlag = 0
     let playerVC = AVPlayerViewController()
+    
+    let identifierLabel: UILabel = {
+        let label = UILabel()
+        label.backgroundColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     
     override func viewDidLoad() {
@@ -57,6 +66,7 @@ class WorkoutViewController: UIViewController {
         self.view.addSubview(playerVC.view)
         
         let captureSession = AVCaptureSession()
+        captureSession.sessionPreset = .photo
         
         guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
@@ -67,11 +77,63 @@ class WorkoutViewController: UIViewController {
         let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         view.layer.addSublayer(previewLayer)
         previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        previewLayer.frame = CGRect(x: 20, y: 270, width: screenWidth - 40, height: 180)
+        previewLayer.frame = CGRect(x: 20, y: 270, width: screenWidth - 40, height: 400)
+        
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "videoQueue"))
+        captureSession.addOutput(dataOutput)
+        
+        setupIdentifierConfidenceLabel()
+        
+        
+//        let request = VNCoreMLRequest(model: <#T##VNCoreMLModel#>, completionHandler: <#T##VNRequestCompletionHandler?##VNRequestCompletionHandler?##(VNRequest, Error?) -> Void#>)
+//        VNImageRequestHandler(cgImage: <#T##CGImage#>, options: [:]).perform(<#T##requests: [VNRequest]##[VNRequest]#>)
+        
+    }
+    
+    fileprivate func setupIdentifierConfidenceLabel() {
+        view.addSubview(identifierLabel)
+        identifierLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -32).isActive = true
+        identifierLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        identifierLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        identifierLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    }
+    
+    
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        //        print("Camera was able to capture a frame:", Date())
+        
+        guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
+        
+        // !!!Important
+        // make sure to go download the models at https://developer.apple.com/machine-learning/ scroll to the bottom
+        guard let model = try? VNCoreMLModel(for: SqueezeNet().model) else { return }
+        let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
+            
+            //perhaps check the err
+            
+            //            print(finishedReq.results)
+            
+            guard let results = finishedReq.results as? [VNClassificationObservation] else { return }
+            
+            guard let firstObservation = results.first else { return }
+            
+            print(firstObservation.identifier, firstObservation.confidence)
+            
+            DispatchQueue.main.async {
+                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)"
+            }
+            
+        }
+        
+        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
     
     @objc func backToLibrary(btn:UIButton) {
         self.playerVC.player!.pause()
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
 }
