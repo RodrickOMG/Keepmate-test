@@ -59,7 +59,95 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         tagOfButtons += 1
         return cell
     }
+    
+    
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        view.backgroundColor = UIColor.white
+        
+        let screenFrame = UIScreen.main.bounds
+        let screenWidth = screenFrame.size.width
+        let screenHeight = screenFrame.size.height
+        
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.alwaysBounceVertical = true
+        scroll.bounces = true
+        scroll.isDirectionalLockEnabled = false //default false
+        scroll.isPagingEnabled = false
+        
+        scroll.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 0)
+        //add additional scroll area around content
+        scroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        scroll.showsVerticalScrollIndicator = true
+        scroll.indicatorStyle = .black
+        scroll.bouncesZoom = true
+        //如果正显示着键盘，拖动，则键盘撤回
+        scroll.keyboardDismissMode = .onDrag
+        scroll.flashScrollIndicators()
+        
+        scroll.delegate = self
+        
+        scroll.addSubview(theDayWorkoutLabel)
+        theDayWorkoutLabel.anchor(top: scroll.topAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 20, width: screenWidth, height: 30)
+        
+        scroll.addSubview(theDayWorkoutButton)
+        theDayWorkoutButton.anchor(top: theDayWorkoutLabel.bottomAnchor, left: scroll.leftAnchor, right: scroll.rightAnchor, paddingTop: 5, paddingLeft: 20, paddingRight: 20, width: 335, height: 220)
+        
+        scroll.addSubview(workoutLibraryLabel)
+        workoutLibraryLabel.anchor(top: theDayWorkoutButton.bottomAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 20, width: screenWidth, height: 30)
+        
+        scroll.addSubview(collectionView)
+        collectionView.anchor(top: workoutLibraryLabel.bottomAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 20, paddingRight: 20, width: 335, height: CGFloat(175 * numberOfItems / 2))
+        
+        return scroll
+    }()
+    
+    
+    
+    let theDayWorkoutLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Workout of the Day"
+        label.font = UIFont(name: "Helvetica", size: 25)
+        return label
+    }()
+    
+    let theDayWorkoutButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.backgroundColor = UIColor.red
+        button.setBackgroundImage(UIImage(named: "theDayWorkoutButtonBkg"), for: UIControl.State())
+        button.tag = 0
+        button.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        
+        return button
+    }()
+    
+    let workoutLibraryLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Workout Library"
+        label.font = UIFont(name: "Helvetica", size: 25)
+        return label
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        let screenFrame = UIScreen.main.bounds
+        let screenWidth = screenFrame.size.width
+        let screenHeight = screenFrame.size.height
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.minimumLineSpacing = 25
+        
+        let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: screenWidth - 40, height: 800), collectionViewLayout: layout)
 
+        view.backgroundColor = UIColor.white
+        view.delegate = self
+        view.dataSource = self
+        view.register(NSClassFromString("UICollectionViewCell"), forCellWithReuseIdentifier: "itemId")
+        return view
+    }()
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -70,70 +158,57 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor.white
+        view.addSubview(scrollView)
+        
+        scrollView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+    }
+    
+    override func viewWillLayoutSubviews(){
+        super.viewWillLayoutSubviews()
         let screenFrame = UIScreen.main.bounds
         let screenWidth = screenFrame.size.width
-        let screenHeight = screenFrame.size.height
-        view.backgroundColor = UIColor.white
-        scroll = UIScrollView(frame: view.bounds)
-
-        let Label1 = UILabel(frame: CGRect(x: 25, y: 5, width: screenWidth, height: 30))
-        Label1.text = "Workout of the Day"
-        Label1.font = UIFont(name: "Helvetica", size: 25)
-        self.scroll.addSubview(Label1)
         
-        let theDayWorkout = UIButton(frame: CGRect(x: 25, y: 45, width: screenWidth - 50, height: screenHeight * 0.25))
-        theDayWorkout.backgroundColor = UIColor.red
-        theDayWorkout.setBackgroundImage(UIImage(named: "theDayWorkoutButtonBkg"), for: UIControl.State())
-        theDayWorkout.tag = 0
-        theDayWorkout.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
-        theDayWorkout.layer.cornerRadius = 5
-        theDayWorkout.layer.masksToBounds = true
-        self.scroll.addSubview(theDayWorkout)
-        
-        let Label2 = UILabel(frame: CGRect(x: 25, y: screenHeight * 0.25 + 60, width: screenWidth, height: 30))
-        Label2.text = "Workout Library"
-        Label2.font = UIFont(name: "Helvetica", size: 25)
-        self.scroll.addSubview(Label2)
-        
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 150, height: 150)
-        layout.minimumLineSpacing = 25
-        let collectionView = UICollectionView(frame: CGRect(x: 25, y: screenHeight * 0.25 + 100, width: screenWidth - 50, height: 600), collectionViewLayout: layout)
-        
-        collectionView.backgroundColor = UIColor.white
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(NSClassFromString("UICollectionViewCell"), forCellWithReuseIdentifier: "itemId")
-        self.scroll.addSubview(collectionView)
-        
-        scroll.contentSize = CGSize(width: screenWidth, height: screenHeight * 0.25 + 660)
-        scroll.alwaysBounceVertical = true
-        scroll.bounces = true
-        scroll.isDirectionalLockEnabled = false //default false
-        scroll.isPagingEnabled = false
-        scroll.scrollsToTop = true;
-        scroll.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 0)
-        scroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        scroll.showsVerticalScrollIndicator = true //还有水平的
-        scroll.indicatorStyle = .black //默认黑，黑白两色可选
-        function()
-        scroll.bouncesZoom = true
-        //如果正显示着键盘，拖动，则键盘撤回
-        scroll.keyboardDismissMode = .onDrag
-        
-        scroll.delegate = self
-        view.addSubview(scroll)
-        
+        scrollView.contentSize = CGSize(width: screenWidth, height: CGFloat(175 * numberOfItems / 2 + 280))
     }
     
-    func function(){
-        //滚动条突然显现一下
-        scroll.flashScrollIndicators()
-    }
     
     @objc func btnClick(btn:UIButton) {
+        print("btn")
     self.present(WorkoutViewController(), animated: true, completion: nil)
     }
     
+    // 1、已经开始滚动（不管是拖、拉、放大、缩小等导致）都会执行此函数
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+    }
+    // 2、将要开始拖拽，手指已经放在view上并准备拖动的那一刻
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+    }
+//3、将要结束拖拽，手指已拖动过view并准备离开手指的那一刻，注意：当属性isPagingEnabled为YES时，此函数不被调用
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+    }
+    // 4、已经结束拖拽，手指刚离开view的那一刻
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+    }
+    // 5、view将要开始减速，view滑动之后有惯性
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        
+    }
+    // 6、view已经停止滚动
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+    }
+    // 7、view的缩放
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        
+    }
+    // 8、有动画时调用
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        
+    }
+
 }
