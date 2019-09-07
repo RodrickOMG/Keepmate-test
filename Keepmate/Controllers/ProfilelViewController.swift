@@ -18,82 +18,148 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
      }
      */
 
-    var scroll:UIScrollView!
+    lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .mainBlue
+        
+        view.addSubview(profileImageView)
+        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profileImageView.anchor(top: view.topAnchor, paddingTop: 95,
+                                width: 110, height: 110)
+        profileImageView.layer.cornerRadius = 110 / 2
+        
+        view.addSubview(messageButton)
+        messageButton.anchor(top: view.topAnchor, left: view.leftAnchor,
+                             paddingTop: 64 + 40, paddingLeft: 32, width: 32, height: 32)
+        
+        view.addSubview(followButton)
+        followButton.anchor(top: view.topAnchor, right: view.rightAnchor,
+                            paddingTop: 64 + 40, paddingRight: 32, width: 32, height: 32)
+        
+        view.addSubview(nameLabel)
+        nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        nameLabel.anchor(top: profileImageView.bottomAnchor, paddingTop: 12)
+        
+        view.addSubview(emailLabel)
+        emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        emailLabel.anchor(top: nameLabel.bottomAnchor, paddingTop: 4)
+        
+        return view
+    }()
+    
+    let profileImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.image = #imageLiteral(resourceName: "venom")
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.layer.borderWidth = 3
+        iv.layer.borderColor = UIColor.white.cgColor
+        return iv
+    }()
+    
+    let messageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "ic_mail_outline_white_2x").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleMessageUser), for: .touchUpInside)
+        return button
+    }()
+    
+    let followButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(#imageLiteral(resourceName: "baseline_person_add_white_36dp").withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleFollowUser), for: .touchUpInside)
+        return button
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "Eddie Brock"
+        label.font = UIFont.boldSystemFont(ofSize: 26)
+        label.textColor = .white
+        return label
+    }()
+    
+    let emailLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "venom@gmail.com"
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textColor = .white
+        return label
+    }()
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let screenFrame = UIScreen.main.bounds
-        let screenWidth = screenFrame.size.width
-        let screenHeight = screenFrame.size.height
-        view.backgroundColor = UIColor.white
-        scroll = UIScrollView(frame: view.bounds)
         
-        let userInfo = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight*1.2*0.2))
-        userInfo.backgroundColor = UIColor.lightGray
-        scroll.addSubview(userInfo)
+        view.backgroundColor = .white
         
-        let statsLabel = UILabel(frame: CGRect(x: 5, y: screenHeight*1.2*0.2 + 5, width: 50, height: 15))
-        statsLabel.text = "STATS"
-        statsLabel.font = UIFont(name: "Chalkboard SE", size: 12)
-        scroll.addSubview(statsLabel)
+        view.addSubview(containerView)
+        containerView.anchor(top: view.topAnchor, left: view.leftAnchor,
+                             right: view.rightAnchor, height: 300)
         
-        //内容大小，小于scrollView的大小不会scroll
-        scroll.contentSize = CGSize(width: screenWidth, height: view.bounds.height*1.2)
-        //但是可以设定，内容就算小于它，也能拖：
-        scroll.alwaysBounceVertical = true //还有水平的
-        //内容的初始位置偏移到指定point处
-        //scroll.contentOffset = CGPoint(x: 20, y: 20)
-        //拉到头时可否反弹 default为true
-        scroll.bounces = true
-        //拖时候不能改变方向。但往对角线方向开始拖，可以自由拖
-        scroll.isDirectionalLockEnabled = false //default false
-        //翻页效果，true就是手滑动小了回到原位置，大了直接跳下一页
-        scroll.isPagingEnabled = false
-        //scroll.isScrollEnabled = false //false就不能滑了==
-        //点状态栏回到最上方
-        scroll.scrollsToTop = true;
-        //滚动条到屏幕边缘的距离 offset <-> inset ,offset偏移，inset内移
-        scroll.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 0)
-        //add additional scroll area around content
-        scroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        //是否显示滚动条
-        scroll.showsVerticalScrollIndicator = true //还有水平的
-        scroll.indicatorStyle = .black //默认黑，黑白两色可选
-        function()
-        scroll.bouncesZoom = true
-        //如果正显示着键盘，拖动，则键盘撤回
-        scroll.keyboardDismissMode = .onDrag
-        //scroll.refreshControl = UIRefreshControl(frame: CGRect(x: 10, y: 10, width: 40, height: 40))
-        
-        //        open var decelerationRate: CGFloat
-        
-        //        open var indexDisplayMode: UIScrollViewIndexDisplayMode
-        
-        //现在实现ScrollViewDelegate,补充后面的协议方法
-        
-        scroll.delegate = self
-        view.addSubview(scroll)
-    }
-    func function(){
-        //滚动条突然显现一下
-        scroll.flashScrollIndicators()
-    }
-    //点击状态栏时触发，返回false则不能滑上去 相应的 didScrollToTop是已经回了调用的
-    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
-        return true
-    }
-    //开始拖拽前：
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        
-    }//拖拽结束
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
-    //滚动动画结束
-    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    
+    // MARK: - Selectors
+    
+    @objc func handleMessageUser() {
+        print("Message user here..")
+    }
+    
+    @objc func handleFollowUser() {
+        print("Follow user here..")
+    }
+}
+
+extension UIColor {
+    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
+        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+    }
+    
+    static let mainBlue = UIColor.rgb(red: 0, green: 150, blue: 255)
+}
+
+extension UIView {
+    
+    func anchor(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, paddingTop: CGFloat? = 0,
+                paddingLeft: CGFloat? = 0, paddingBottom: CGFloat? = 0, paddingRight: CGFloat? = 0, width: CGFloat? = nil, height: CGFloat? = nil) {
         
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top {
+            topAnchor.constraint(equalTo: top, constant: paddingTop!).isActive = true
+        }
+        
+        if let left = left {
+            leftAnchor.constraint(equalTo: left, constant: paddingLeft!).isActive = true
+        }
+        
+        if let bottom = bottom {
+            if let paddingBottom = paddingBottom {
+                bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
+            }
+        }
+        
+        if let right = right {
+            if let paddingRight = paddingRight {
+                rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
+            }
+        }
+        
+        if let width = width {
+            widthAnchor.constraint(equalToConstant: width).isActive = true
+        }
+        
+        if let height = height {
+            heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
     }
 }
 

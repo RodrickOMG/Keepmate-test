@@ -11,7 +11,7 @@ import UIKit
 class LibraryViewController: UIViewController, UIScrollViewDelegate
 ,UICollectionViewDelegate, UICollectionViewDataSource {
     
-    let numberOfItems = 6
+    let numberOfItems = 4
     var tagOfButtons = 0
     var scroll:UIScrollView!
     
@@ -31,25 +31,28 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
             let btn = UIButton()
             btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
             btn.backgroundColor = UIColor.gray
-            btn.setBackgroundImage(UIImage(named: "theDayWorkoutButtonBkg"), for: UIControl.State())
+            btn.setBackgroundImage(UIImage(named: "pushupButtonBkg"), for: UIControl.State())
             btn.tag = 1
             cell.addSubview(btn)
         case 1:
             let btn = UIButton()
             btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-            btn.backgroundColor = UIColor.red
+            btn.backgroundColor = UIColor.gray
+            btn.setBackgroundImage(UIImage(named: "situpButtonBkg"), for: UIControl.State())
             btn.tag = 2
             cell.addSubview(btn)
         case 2:
             let btn = UIButton()
             btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-            btn.backgroundColor = UIColor.blue
+            btn.backgroundColor = UIColor.gray
+            btn.setBackgroundImage(UIImage(named: "plankButtonBkg"), for: UIControl.State())
             btn.tag = 3
             cell.addSubview(btn)
         case 3:
             let btn = UIButton()
             btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
             btn.backgroundColor = UIColor.yellow
+            btn.setBackgroundImage(UIImage(named: "workoutButtonBkg3"), for: UIControl.State())
             btn.tag = 4
             cell.addSubview(btn)
         default:
