@@ -72,6 +72,7 @@
 		52A6D63A22D89F1400D0670B /* Keepmate */ = {
 			isa = PBXGroup;
 			children = (
+				52C9B62623237886005962A3 /* Supporting Files */,
 				52A6D65322D8AF1A00D0670B /* Utils */,
 				52A6D65922D8B77B00D0670B /* Assets.xcassets */,
 				52A6D65522D8AF4D00D0670B /* Views */,
@@ -79,7 +80,6 @@
 				52EF59E622FC66E600FC8263 /* Source */,
 				52A6D63B22D89F1400D0670B /* AppDelegate.swift */,
 				52A6D64422D89F1500D0670B /* LaunchScreen.storyboard */,
-				52A6D64722D89F1500D0670B /* Info.plist */,
 				52A6D64D22D8AE7B00D0670B /* Controllers */,
 			);
 			path = Keepmate;
@@ -135,6 +135,14 @@
 				52A6D65722D8B33B00D0670B /* BWWalkthrough.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		52C9B62623237886005962A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				52A6D64722D89F1500D0670B /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		52EF59E622FC66E600FC8263 /* Source */ = {

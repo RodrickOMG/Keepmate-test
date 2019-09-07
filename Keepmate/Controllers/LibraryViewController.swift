@@ -176,9 +176,10 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
     }
     
     
-    @objc func btnClick(btn:UIButton) {
+    @objc func btnClick(btn:UIButton, sender: AnyObject) {
         print("btn")
-    self.present(WorkoutViewController(), animated: true, completion: nil)
+        self.performSegue(withIdentifier: "redView", sender: sender)
+        self.present(WorkoutViewController(), animated: true, completion: nil)
     }
     
     // 1、已经开始滚动（不管是拖、拉、放大、缩小等导致）都会执行此函数
