@@ -33,6 +33,7 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
             btn.backgroundColor = UIColor.gray
             btn.setBackgroundImage(UIImage(named: "pushupButtonBkg"), for: UIControl.State())
             btn.tag = 1
+            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
             cell.addSubview(btn)
         case 1:
             let btn = UIButton()
@@ -40,6 +41,7 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
             btn.backgroundColor = UIColor.gray
             btn.setBackgroundImage(UIImage(named: "situpButtonBkg"), for: UIControl.State())
             btn.tag = 2
+            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
             cell.addSubview(btn)
         case 2:
             let btn = UIButton()
@@ -47,13 +49,15 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
             btn.backgroundColor = UIColor.gray
             btn.setBackgroundImage(UIImage(named: "plankButtonBkg"), for: UIControl.State())
             btn.tag = 3
+            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
             cell.addSubview(btn)
         case 3:
             let btn = UIButton()
             btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
             btn.backgroundColor = UIColor.yellow
-            btn.setBackgroundImage(UIImage(named: "workoutButtonBkg3"), for: UIControl.State())
+            btn.setBackgroundImage(UIImage(named: "Squat"), for: UIControl.State())
             btn.tag = 4
+            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
             cell.addSubview(btn)
         default:
             print("Error")
@@ -176,10 +180,29 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
     }
     
     
-    @objc func btnClick(btn:UIButton, sender: AnyObject) {
+    @objc func btnClick(btn:UIButton) {
         print("btn")
-        self.performSegue(withIdentifier: "redView", sender: sender)
-        self.present(WorkoutViewController(), animated: true, completion: nil)
+        let viewController = WorkoutViewController()
+        switch btn.tag {
+        case 0:
+            viewController.tag = "Workout of the Day"
+            self.present(viewController, animated: true, completion: nil)
+        case 1:
+            viewController.tag = "Push-up"
+            self.present(viewController, animated: true, completion: nil)
+        case 2:
+            viewController.tag = "Sit-up"
+            self.present(viewController, animated: true, completion: nil)
+        case 3:
+            viewController.tag = "Plank"
+            self.present(viewController, animated: true, completion: nil)
+        case 4:
+            viewController.tag = "Squat"
+            self.present(viewController, animated: true, completion: nil)
+        default:
+            print("Error")
+            break
+        }
     }
     
     // 1、已经开始滚动（不管是拖、拉、放大、缩小等导致）都会执行此函数

@@ -25,6 +25,8 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
     var playFlag = 0
     let playerVC = AVPlayerViewController()
     
+    var tag:String?
+    
     let identifierLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
@@ -32,6 +34,7 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
     
     
     override func viewDidLoad() {
@@ -46,8 +49,15 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
         let back = UIButton(frame: CGRect(x: 10, y: 44, width: 20, height: 20))
         back.setBackgroundImage(UIImage(named: "arrow_back_left_navigation_previous_96px_1225467_easyicon.net"), for: UIControl.State())
         back.addTarget(self, action: #selector(backToLibrary), for: .touchUpInside)
-        
         self.view.addSubview(back)
+        
+        //添加一个文本title
+        let label = UILabel(frame: CGRect(x: 0, y: 44, width: 280, height: 30))
+        label.text = tag
+        label.textAlignment = NSTextAlignment.center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.center = CGPoint(x: screenWidth/2, y: 56https://www.cnblogs.com/gejuncheng/p/8127446.html)
+        self.view.addSubview(label)
     
         let mediaPath = Bundle.main.path(forResource: "Sunrise", ofType: "mp4")
         let mediaURL = URL(fileURLWithPath: mediaPath!)
