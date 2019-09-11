@@ -26,42 +26,28 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         cell.layer.cornerRadius = 5
         cell.layer.masksToBounds = true
         
+        let btn = UIButton()
+        btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        btn.backgroundColor = UIColor.gray
+        
         switch tagOfButtons {
         case 0:
-            let btn = UIButton()
-            btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-            btn.backgroundColor = UIColor.gray
             btn.setBackgroundImage(UIImage(named: "pushupButtonBkg"), for: UIControl.State())
             btn.tag = 1
-            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
-            cell.addSubview(btn)
         case 1:
-            let btn = UIButton()
-            btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-            btn.backgroundColor = UIColor.gray
             btn.setBackgroundImage(UIImage(named: "situpButtonBkg"), for: UIControl.State())
             btn.tag = 2
-            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
-            cell.addSubview(btn)
         case 2:
-            let btn = UIButton()
-            btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-            btn.backgroundColor = UIColor.gray
             btn.setBackgroundImage(UIImage(named: "plankButtonBkg"), for: UIControl.State())
             btn.tag = 3
-            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
-            cell.addSubview(btn)
         case 3:
-            let btn = UIButton()
-            btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
-            btn.backgroundColor = UIColor.yellow
             btn.setBackgroundImage(UIImage(named: "Squat"), for: UIControl.State())
             btn.tag = 4
-            btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
-            cell.addSubview(btn)
         default:
             print("Error")
         }
+        btn.addTarget(self, action: #selector(btnClick), for: .touchUpInside)
+        cell.addSubview(btn)
         
         tagOfButtons += 1
         return cell
@@ -186,23 +172,19 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         switch btn.tag {
         case 0:
             viewController.tag = "Workout of the Day"
-            self.present(viewController, animated: true, completion: nil)
         case 1:
             viewController.tag = "Push-up"
-            self.present(viewController, animated: true, completion: nil)
         case 2:
             viewController.tag = "Sit-up"
-            self.present(viewController, animated: true, completion: nil)
         case 3:
             viewController.tag = "Plank"
-            self.present(viewController, animated: true, completion: nil)
         case 4:
             viewController.tag = "Squat"
-            self.present(viewController, animated: true, completion: nil)
         default:
             print("Error")
             break
         }
+        self.present(viewController, animated: true, completion: nil)
     }
     
     // 1、已经开始滚动（不管是拖、拉、放大、缩小等导致）都会执行此函数

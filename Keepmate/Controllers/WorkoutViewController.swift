@@ -56,7 +56,7 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
         label.text = tag
         label.textAlignment = NSTextAlignment.center
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.center = CGPoint(x: screenWidth/2, y: 56https://www.cnblogs.com/gejuncheng/p/8127446.html)
+        label.center = CGPoint(x: screenWidth/2, y: 56)
         self.view.addSubview(label)
     
         let mediaPath = Bundle.main.path(forResource: "Sunrise", ofType: "mp4")
