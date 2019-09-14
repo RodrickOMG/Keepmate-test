@@ -219,7 +219,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_8335" translatesAutoresizingMaskIntoConstraints="NO" id="U4w-cG-w3x">
                                 <rect key="frame" x="0.0" y="0.0" width="374" height="812"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arnold Schwarzenegger" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxr-Yf-VFy">
+                            <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Arnold Schwarzenegger" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uxr-Yf-VFy">
                                 <rect key="frame" x="108" y="143" width="159" height="79.333333333333314"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -233,11 +233,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTd-I1-klP">
-                                <rect key="frame" x="93" y="557" width="194" height="52"/>
+                                <rect key="frame" x="90" y="557" width="194" height="52"/>
                                 <color key="backgroundColor" red="0.22745098039215686" green="0.28235294117647058" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Get started">
+                                <state key="normal" title="Get Started">
                                     <color key="titleColor" red="0.93333333333333335" green="0.81176470588235294" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -247,7 +247,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="getStarted:" destination="Xz3-05-iOi" eventType="touchUpInside" id="7zt-Po-eev"/>
+                                    <action selector="getStarted:" destination="Xz3-05-iOi" eventType="touchUpInside" id="2la-8v-LMM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -259,9 +259,9 @@
                             <constraint firstItem="Uxr-Yf-VFy" firstAttribute="leading" secondItem="ova-U1-ckS" secondAttribute="leading" constant="108" id="DME-7U-TPf"/>
                             <constraint firstAttribute="bottom" secondItem="U4w-cG-w3x" secondAttribute="bottom" id="Hwb-qS-ENU"/>
                             <constraint firstItem="U4w-cG-w3x" firstAttribute="leading" secondItem="pP6-ex-yqu" secondAttribute="leading" id="KAY-ad-OYI"/>
-                            <constraint firstItem="HTd-I1-klP" firstAttribute="leading" secondItem="U4w-cG-w3x" secondAttribute="trailing" constant="-281" id="bNr-uh-3eb"/>
+                            <constraint firstItem="HTd-I1-klP" firstAttribute="leading" secondItem="U4w-cG-w3x" secondAttribute="trailing" constant="-284" id="bNr-uh-3eb"/>
                             <constraint firstItem="U4w-cG-w3x" firstAttribute="centerX" secondItem="pBe-lE-lLe" secondAttribute="centerX" id="dlB-fr-GFK"/>
-                            <constraint firstItem="U4w-cG-w3x" firstAttribute="centerX" secondItem="HTd-I1-klP" secondAttribute="centerX" constant="-3" id="gR6-RI-qXE"/>
+                            <constraint firstItem="U4w-cG-w3x" firstAttribute="centerX" secondItem="HTd-I1-klP" secondAttribute="centerX" id="gR6-RI-qXE"/>
                             <constraint firstItem="U4w-cG-w3x" firstAttribute="top" secondItem="pP6-ex-yqu" secondAttribute="top" id="lpl-I3-Wr5"/>
                             <constraint firstItem="ova-U1-ckS" firstAttribute="trailing" secondItem="pBe-lE-lLe" secondAttribute="trailing" constant="94" id="vcz-TT-TKa"/>
                             <constraint firstItem="HTd-I1-klP" firstAttribute="top" secondItem="pBe-lE-lLe" secondAttribute="bottom" constant="158.66666666666663" id="xVk-1O-cXv"/>

@@ -27,6 +27,24 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
     
     var tag:String?
     
+    let screenWidth = UIScreen.main.bounds.width
+    
+    func setupBackButton() {
+        let back = UIButton(frame: CGRect(x: 10, y: 44, width: 20, height: 20))
+        back.setBackgroundImage(UIImage(named: "arrow_back_left_navigation_previous_96px_1225467_easyicon.net"), for: UIControl.State())
+        back.addTarget(self, action: #selector(backToLibrary), for: .touchUpInside)
+        self.view.addSubview(back)
+    }
+    
+    func setupTagLabel() {
+        let label = UILabel(frame: CGRect(x: 0, y: 44, width: 280, height: 30))
+        label.text = tag
+        label.textAlignment = NSTextAlignment.center
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.center = CGPoint(x: screenWidth/2, y: 56)
+        self.view.addSubview(label)
+    }
+    
     let identifierLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
@@ -35,46 +53,22 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
         return label
     }()
     
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view = UIView(frame: view.bounds)
-        view.backgroundColor = UIColor.white
-        let screenFrame = UIScreen.main.bounds
-        let screenWidth = screenFrame.size.width
-        
-        
-        let back = UIButton(frame: CGRect(x: 10, y: 44, width: 20, height: 20))
-        back.setBackgroundImage(UIImage(named: "arrow_back_left_navigation_previous_96px_1225467_easyicon.net"), for: UIControl.State())
-        back.addTarget(self, action: #selector(backToLibrary), for: .touchUpInside)
-        self.view.addSubview(back)
-        
-        //添加一个文本title
-        let label = UILabel(frame: CGRect(x: 0, y: 44, width: 280, height: 30))
-        label.text = tag
-        label.textAlignment = NSTextAlignment.center
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.center = CGPoint(x: screenWidth/2, y: 56)
-        self.view.addSubview(label)
-    
+    func setupMediaPlayer() {
         let mediaPath = Bundle.main.path(forResource: "Sunrise", ofType: "mp4")
         let mediaURL = URL(fileURLWithPath: mediaPath!)
-        
         let avPlayer = AVPlayer(url:mediaURL as URL)
-        
+
         playerVC.player = avPlayer
         playerVC.view.frame = CGRect(x: 20, y: 70, width: screenWidth - 40, height: 180)
         playerVC.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerVC.showsPlaybackControls = true
-
         self.present(playerVC, animated: true) {
             self.playerVC.player!.play()
         }
-        
         self.view.addSubview(playerVC.view)
-        
+    }
+    
+    func setupPoseEstimation() {
         let captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
         
@@ -94,11 +88,26 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
         captureSession.addOutput(dataOutput)
         
         setupIdentifierConfidenceLabel()
+    }
+    
+    func setupUI() {
+        view = UIView(frame: view.bounds)
+        view.backgroundColor = UIColor.white
         
+        //添加返回按钮
+        setupBackButton()
+        //添加一个文本title
+        setupTagLabel()
+        //添加视频播放器
+        setupMediaPlayer()
+        //添加单人姿态估计模块
+        setupPoseEstimation()
         
-//        let request = VNCoreMLRequest(model: <#T##VNCoreMLModel#>, completionHandler: <#T##VNRequestCompletionHandler?##VNRequestCompletionHandler?##(VNRequest, Error?) -> Void#>)
-//        VNImageRequestHandler(cgImage: <#T##CGImage#>, options: [:]).perform(<#T##requests: [VNRequest]##[VNRequest]#>)
-        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+       
     }
     
     fileprivate func setupIdentifierConfidenceLabel() {

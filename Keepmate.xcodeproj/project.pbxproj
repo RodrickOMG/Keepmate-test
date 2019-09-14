@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5241F935232C80C600662488 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F934232C80C600662488 /* LoginViewController.swift */; };
+		52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */; };
+		52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52577EB6232BAF1300E18517 /* RegisterViewController.swift */; };
 		52A1A58D22DF7C0B000D71F2 /* ProfilelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */; };
 		52A6D63C22D89F1400D0670B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6D63B22D89F1400D0670B /* AppDelegate.swift */; };
 		52A6D63E22D89F1400D0670B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6D63D22D89F1400D0670B /* ViewController.swift */; };
@@ -20,9 +23,40 @@
 		52EF59ED22FD07AC00FC8263 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */; };
 		52F064E022F911A00023266D /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064DF22F911A00023266D /* LibraryViewController.swift */; };
 		52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064E322FB00B90023266D /* WorkoutViewController.swift */; };
+		B82F25B8491E9A70F4EA7785 /* Pods_Keepmate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		52577EA3232B442200E18517 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBB7229949F245BBBBF057918FFA1A9F;
+			remoteInfo = "Pods-Keepmate";
+		};
+		52577EA5232B442200E18517 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E97D43C46A45EE515A4DA3AF94398441;
+			remoteInfo = SVProgressHUD;
+		};
+		52577EB1232B7A4700E18517 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0383903D05EDD5C442C682C1F7A1752D;
+			remoteInfo = ChameleonFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepmate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5241F934232C80C600662488 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		52577E9D232B442200E18517 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
+		52577EAA232B7A4600E18517 /* Keepmate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keepmate-Bridging-Header.h"; sourceTree = "<group>"; };
+		52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
+		52577EB6232BAF1300E18517 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilelViewController.swift; sourceTree = "<group>"; };
 		52A6D63822D89F1400D0670B /* Keepmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A6D63B22D89F1400D0670B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +72,8 @@
 		52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		52F064DF22F911A00023266D /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		52F064E322FB00B90023266D /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepmate.debug.xcconfig"; path = "Target Support Files/Pods-Keepmate/Pods-Keepmate.debug.xcconfig"; sourceTree = "<group>"; };
+		EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepmate.release.xcconfig"; path = "Target Support Files/Pods-Keepmate/Pods-Keepmate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,12 +81,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82F25B8491E9A70F4EA7785 /* Pods_Keepmate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52577E9E232B442200E18517 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52577EB2232B7A4700E18517 /* ChameleonFramework.framework */,
+				52577EA4232B442200E18517 /* Pods_Keepmate.framework */,
+				52577EA6232B442200E18517 /* SVProgressHUD.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52577EB5232BAEDA00E18517 /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				52577EB6232BAF1300E18517 /* RegisterViewController.swift */,
+				5241F934232C80C600662488 /* LoginViewController.swift */,
+			);
+			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
 		52A6D62F22D89F1400D0670B = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +114,8 @@
 				52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */,
 				52A6D63A22D89F1400D0670B /* Keepmate */,
 				52A6D63922D89F1400D0670B /* Products */,
+				A927E56BF05A991B02C5B348 /* Pods */,
+				C4AC3EEB2C88F108044FC38F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,7 +136,6 @@
 				52A6D65522D8AF4D00D0670B /* Views */,
 				52A6D65422D8AF3B00D0670B /* Models */,
 				52EF59E622FC66E600FC8263 /* Source */,
-				52A6D63B22D89F1400D0670B /* AppDelegate.swift */,
 				52A6D64422D89F1500D0670B /* LaunchScreen.storyboard */,
 				52A6D64D22D8AE7B00D0670B /* Controllers */,
 			);
@@ -88,6 +145,7 @@
 		52A6D64D22D8AE7B00D0670B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				52577EB5232BAEDA00E18517 /* LoginAndRegister */,
 				52A6D63D22D89F1400D0670B /* ViewController.swift */,
 				52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */,
 				52F064DF22F911A00023266D /* LibraryViewController.swift */,
@@ -133,6 +191,7 @@
 			children = (
 				52A6D63F22D89F1400D0670B /* Main.storyboard */,
 				52A6D65722D8B33B00D0670B /* BWWalkthrough.storyboard */,
+				52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -141,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				52A6D64722D89F1500D0670B /* Info.plist */,
+				52577EAA232B7A4600E18517 /* Keepmate-Bridging-Header.h */,
+				52A6D63B22D89F1400D0670B /* AppDelegate.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,6 +221,24 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
+		A927E56BF05A991B02C5B348 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52577E9D232B442200E18517 /* Pods.xcodeproj */,
+				CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */,
+				EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C4AC3EEB2C88F108044FC38F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52A6D64A22D89F1500D0670B /* Build configuration list for PBXNativeTarget "Keepmate" */;
 			buildPhases = (
+				C02697D8BA8FC91647E884D7 /* [CP] Check Pods Manifest.lock */,
 				52A6D63422D89F1400D0670B /* Sources */,
 				52A6D63522D89F1400D0670B /* Frameworks */,
 				52A6D63622D89F1400D0670B /* Resources */,
+				292EB502B50DDE74C502F838 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -192,6 +273,7 @@
 				TargetAttributes = {
 					52A6D63722D89F1400D0670B = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1030;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -211,12 +293,42 @@
 			mainGroup = 52A6D62F22D89F1400D0670B;
 			productRefGroup = 52A6D63922D89F1400D0670B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 52577E9E232B442200E18517 /* Products */;
+					ProjectRef = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				52A6D63722D89F1400D0670B /* Keepmate */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		52577EA4232B442200E18517 /* Pods_Keepmate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Keepmate.framework;
+			remoteRef = 52577EA3232B442200E18517 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52577EA6232B442200E18517 /* SVProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SVProgressHUD.framework;
+			remoteRef = 52577EA5232B442200E18517 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52577EB2232B7A4700E18517 /* ChameleonFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ChameleonFramework.framework;
+			remoteRef = 52577EB1232B7A4700E18517 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		52A6D63622D89F1400D0670B /* Resources */ = {
@@ -226,6 +338,7 @@
 				52EF59EB22FC68F200FC8263 /* Sunrise.mp4 in Resources */,
 				52A6D65822D8B33B00D0670B /* BWWalkthrough.storyboard in Resources */,
 				52A6D64622D89F1500D0670B /* LaunchScreen.storyboard in Resources */,
+				52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */,
 				52A6D65A22D8B77B00D0670B /* Assets.xcassets in Resources */,
 				52A6D64122D89F1400D0670B /* Main.storyboard in Resources */,
 			);
@@ -233,11 +346,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		292EB502B50DDE74C502F838 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Keepmate/Pods-Keepmate-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Keepmate/Pods-Keepmate-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Keepmate/Pods-Keepmate-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C02697D8BA8FC91647E884D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Keepmate-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		52A6D63422D89F1400D0670B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */,
 				52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */,
 				52A6D65222D8AEE700D0670B /* BWWalkthroughViewController.swift in Sources */,
 				52A6D65122D8AEE700D0670B /* BWWalkthroughPageViewController.swift in Sources */,
@@ -245,6 +401,7 @@
 				52A6D63E22D89F1400D0670B /* ViewController.swift in Sources */,
 				52A1A58D22DF7C0B000D71F2 /* ProfilelViewController.swift in Sources */,
 				52F064E022F911A00023266D /* LibraryViewController.swift in Sources */,
+				5241F935232C80C600662488 /* LoginViewController.swift in Sources */,
 				52A6D63C22D89F1400D0670B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,9 +546,11 @@
 		};
 		52A6D64B22D89F1500D0670B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YZCDVJBQY3;
 				INFOPLIST_FILE = "Keepmate/Supporting Files/Info.plist";
@@ -401,6 +560,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Rodrick.Keepmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Keepmate/Supporting Files/Keepmate-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -408,9 +569,11 @@
 		};
 		52A6D64C22D89F1500D0670B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YZCDVJBQY3;
 				INFOPLIST_FILE = "Keepmate/Supporting Files/Info.plist";
@@ -420,6 +583,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Rodrick.Keepmate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Keepmate/Supporting Files/Keepmate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

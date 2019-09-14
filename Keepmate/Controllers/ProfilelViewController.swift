@@ -17,6 +17,19 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         // Drawing code
      }
      */
+    
+    func save(){
+        let gamescore:BmobObject = BmobObject(className: "GameScore")
+        gamescore.setObject("Jhon Smith", forKey: "playerName")
+        gamescore.setObject(90, forKey: "score")
+        gamescore.saveInBackground { (isSuccessful, error) in
+            if error != nil{
+                print("error is \(error?.localizedDescription ?? "nil")")
+            }else{
+                print("success")
+            }
+        }
+    }
 
     lazy var containerView: UIView = {
         let view = UIView()
@@ -100,7 +113,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         containerView.anchor(top: view.topAnchor, left: view.leftAnchor,
                              right: view.rightAnchor, height: 300)
         
-        
+        //save()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

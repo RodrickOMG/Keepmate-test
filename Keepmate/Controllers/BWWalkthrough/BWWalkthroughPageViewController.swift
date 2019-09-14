@@ -169,11 +169,13 @@ open class BWWalkthroughPageViewController: UIViewController, BWWalkthroughPage 
     @IBOutlet weak var getStarted: UIButton!
     
     
-    
     @IBAction func getStarted(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: "everLaunched")
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let tabViewController = main.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = tabViewController
+        //UserDefaults.standard.set(true, forKey: "everLaunched")
+//        let main = UIStoryboard(name: "Main", bundle: nil)
+//        let tabViewController = main.instantiateInitialViewController()
+//        UIApplication.shared.keyWindow?.rootViewController = tabViewController
+        let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
+        let vc = sb.instantiateViewController(withIdentifier: "Login")
+        self.present(vc, animated: true, completion: nil)
     }
 }
