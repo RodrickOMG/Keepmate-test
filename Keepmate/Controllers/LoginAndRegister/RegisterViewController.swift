@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    
     @IBAction func goBack(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     
     
     override func viewDidLoad() {
@@ -26,7 +31,28 @@ class RegisterViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    
+    @IBAction func registerPressed(_ sender: UIButton) {
+        //TODO: Set up a new user on our Bmob database
+        SVProgressHUD.show()
+        let user = BmobUser()
+        user.username = usernameTextfield.text!
+        
+        user.password = passwordTextfield.text!
+        user.signUpInBackground {
+            (isSuccessful, error) in if isSuccessful {
+                print("Register successfully")
+                SVProgressHUD.dismiss()
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let tabViewController = main.instantiateInitialViewController()
+                UIApplication.shared.keyWindow?.rootViewController = tabViewController
+            } else {
+                print("Register failed, reason:\(error!.localizedDescription)")
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

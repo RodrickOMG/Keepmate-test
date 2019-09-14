@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
+    
     
     @IBAction func gotoRegister(_ sender: UIButton) {
         let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
@@ -19,10 +23,21 @@ class LoginViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    @IBAction func login(_ sender: UIButton) {
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let tabViewController = main.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = tabViewController
+    @IBAction func loginPressed(_ sender: UIButton) {
+        SVProgressHUD.show()
+        BmobUser.loginWithUsername(inBackground: usernameTextfield.text!, password: passwordTextfield.text!)
+        { (user, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print("Login successfully")
+                SVProgressHUD.dismiss()
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                let tabViewController = main.instantiateInitialViewController()
+                UIApplication.shared.keyWindow?.rootViewController = tabViewController
+            }
+            
+        }
     }
     
     
