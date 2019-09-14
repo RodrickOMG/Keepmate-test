@@ -25,12 +25,14 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginPressed(_ sender: UIButton) {
         SVProgressHUD.show()
+        
         BmobUser.loginWithUsername(inBackground: usernameTextfield.text!, password: passwordTextfield.text!)
         { (user, error) in
             if error != nil {
                 print(error!.localizedDescription)
             } else {
                 print("Login successfully")
+                UserDefaults.standard.set(true, forKey: "everLaunched")
                 SVProgressHUD.dismiss()
                 let main = UIStoryboard(name: "Main", bundle: nil)
                 let tabViewController = main.instantiateInitialViewController()

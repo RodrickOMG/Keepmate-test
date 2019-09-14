@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIScrollViewDelegate {
+class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -18,18 +18,18 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
      }
      */
     
-    func save(){
-        let gamescore:BmobObject = BmobObject(className: "GameScore")
-        gamescore.setObject("Jhon Smith", forKey: "playerName")
-        gamescore.setObject(90, forKey: "score")
-        gamescore.saveInBackground { (isSuccessful, error) in
-            if error != nil{
-                print("error is \(error?.localizedDescription ?? "nil")")
-            }else{
-                print("success")
-            }
-        }
-    }
+//    func save(){
+//        let gamescore:BmobObject = BmobObject(className: "GameScore")
+//        gamescore.setObject("Jhon Smith", forKey: "playerName")
+//        gamescore.setObject(90, forKey: "score")
+//        gamescore.saveInBackground { (isSuccessful, error) in
+//            if error != nil{
+//                print("error is \(error?.localizedDescription ?? "nil")")
+//            }else{
+//                print("success")
+//            }
+//        }
+//    }
 
     lazy var containerView: UIView = {
         let view = UIView()
@@ -60,13 +60,16 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
         return view
     }()
     
-    let profileImageView: UIImageView = {
-        let iv = UIImageView()
-        iv.image = #imageLiteral(resourceName: "venom")
+    let profileImageView: UIButton = {
+        let iv = UIButton()
+        iv.setImage(UIImage(named: "venom"), for: .normal)
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
+        iv.imageView?.contentMode = .scaleAspectFill
+        iv.imageView?.clipsToBounds = true
         iv.layer.borderWidth = 3
         iv.layer.borderColor = UIColor.white.cgColor
+        iv.isUserInteractionEnabled = true
         return iv
     }()
     
@@ -128,6 +131,10 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate {
     
     @objc func handleFollowUser() {
         print("Follow user here..")
+    }
+    
+    @objc func handleProfilePicture() {
+        //setup profile picture or change it
     }
 }
 

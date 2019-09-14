@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5241F935232C80C600662488 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F934232C80C600662488 /* LoginViewController.swift */; };
+		5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F942232CD84D00662488 /* SettingsTableViewController.swift */; };
 		52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */; };
 		52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52577EB6232BAF1300E18517 /* RegisterViewController.swift */; };
 		52A1A58D22DF7C0B000D71F2 /* ProfilelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */; };
@@ -53,6 +54,7 @@
 /* Begin PBXFileReference section */
 		28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepmate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241F934232C80C600662488 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5241F942232CD84D00662488 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		52577E9D232B442200E18517 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		52577EAA232B7A4600E18517 /* Keepmate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keepmate-Bridging-Header.h"; sourceTree = "<group>"; };
 		52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				52F064DF22F911A00023266D /* LibraryViewController.swift */,
 				52F064E322FB00B90023266D /* WorkoutViewController.swift */,
 				52A6D64E22D8AEA400D0670B /* BWWalkthrough */,
+				5241F942232CD84D00662488 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */,
 				52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */,
 				52A6D65222D8AEE700D0670B /* BWWalkthroughViewController.swift in Sources */,
+				5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */,
 				52A6D65122D8AEE700D0670B /* BWWalkthroughPageViewController.swift in Sources */,
 				52EF59ED22FD07AC00FC8263 /* SqueezeNet.mlmodel in Sources */,
 				52A6D63E22D89F1400D0670B /* ViewController.swift in Sources */,

@@ -43,6 +43,7 @@ class RegisterViewController: UIViewController {
         user.signUpInBackground {
             (isSuccessful, error) in if isSuccessful {
                 print("Register successfully")
+                UserDefaults.standard.set(true, forKey: "everLaunched")
                 SVProgressHUD.dismiss()
                 let main = UIStoryboard(name: "Main", bundle: nil)
                 let tabViewController = main.instantiateInitialViewController()

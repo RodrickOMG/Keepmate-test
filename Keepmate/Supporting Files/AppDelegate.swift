@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Thread .sleep(forTimeInterval: 1)
         // 检测用户是不是第一次启动
-        if UserDefaults.standard.bool(forKey: "everLaunched") == false || UserDefaults.standard.bool(forKey: "everLaunched") == true {
+        if UserDefaults.standard.bool(forKey: "everLaunched") == false {
             // 是第一次启动
             UserDefaults.standard.set(true, forKey: "firstLaunched")
             UserDefaults.standard.set(true, forKey: "everLaunched")
