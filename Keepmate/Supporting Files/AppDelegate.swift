@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        Bmob.register(withAppKey: "153741b7c55aaba8ed40be4d3f9bf2f9")
+//        Bmob.register(withAppKey: "153741b7c55aaba8ed40be4d3f9bf2f9")
+//        Bmob.resetDomain("http://KeepmateFiles.bmob.cn")
+        
+        FirebaseApp.configure()
         
         Thread .sleep(forTimeInterval: 1)
         // 检测用户是不是第一次启动

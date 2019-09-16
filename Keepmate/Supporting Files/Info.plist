@@ -22,12 +22,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>请求访问您的相机</string>
+	<string>Would Like to Access The Camera</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>请求访问您的相册</string>
+	<string>Would Like to Access The Photo Library</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>请求访问您的相册</string>
+	<string>Would Like to Access The Photo Library</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

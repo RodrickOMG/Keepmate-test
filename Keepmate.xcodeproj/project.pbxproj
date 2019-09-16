@@ -11,6 +11,7 @@
 		5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F942232CD84D00662488 /* SettingsTableViewController.swift */; };
 		52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */; };
 		52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52577EB6232BAF1300E18517 /* RegisterViewController.swift */; };
+		528662DC232F55A9005948C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 528662DB232F55A9005948C5 /* GoogleService-Info.plist */; };
 		52A1A58D22DF7C0B000D71F2 /* ProfilelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */; };
 		52A6D63C22D89F1400D0670B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6D63B22D89F1400D0670B /* AppDelegate.swift */; };
 		52A6D63E22D89F1400D0670B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A6D63D22D89F1400D0670B /* ViewController.swift */; };
@@ -24,30 +25,157 @@
 		52EF59ED22FD07AC00FC8263 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */; };
 		52F064E022F911A00023266D /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064DF22F911A00023266D /* LibraryViewController.swift */; };
 		52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064E322FB00B90023266D /* WorkoutViewController.swift */; };
+		52FA8F7C232FCF010091EBD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8F7B232FCF010091EBD7 /* Extension.swift */; };
 		B82F25B8491E9A70F4EA7785 /* Pods_Keepmate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		52577EA3232B442200E18517 /* PBXContainerItemProxy */ = {
+		528662FB232F5C64005948C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 514D7742C6CBB0BDBD9984AEE97DDFDE;
+			remoteInfo = "BoringSSL-GRPC";
+		};
+		528662FD232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0383903D05EDD5C442C682C1F7A1752D;
+			remoteInfo = ChameleonFramework;
+		};
+		528662FF232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 43B1E4CD7B30B9FD278100133C2AC788;
+			remoteInfo = FirebaseAuth;
+		};
+		52866301232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2B63D462DB7F827C4B11FD51E4F8E2D;
+			remoteInfo = FirebaseCore;
+		};
+		52866303232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8CC9178C366942FD6FF6A115604EAD58;
+			remoteInfo = FirebaseCoreDiagnostics;
+		};
+		52866305232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 51671C73F008B5C0C3751B3855999213;
+			remoteInfo = FirebaseDatabase;
+		};
+		52866307232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 92000153CD73F7FC2DBAB4AB708269F3;
+			remoteInfo = FirebaseFirestore;
+		};
+		52866309232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2DA0D814DFCB860D31D7BCD63D795858;
+			remoteInfo = FirebaseInstanceID;
+		};
+		5286630B232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9CF8FA5F01F446F01AAC7331075452AD;
+			remoteInfo = FirebaseStorage;
+		};
+		5286630D232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 856B5CD56F194FAD26EA91620B66D614;
+			remoteInfo = GoogleDataTransport;
+		};
+		5286630F232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6942351307BC1F54575D9853307EAE0E;
+			remoteInfo = GoogleDataTransportCCTSupport;
+		};
+		52866311232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B43874C6CBB50E7134FBEC24BABFE14F;
+			remoteInfo = GoogleUtilities;
+		};
+		52866313232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1911113E0FBF13CFF9132E5FF7685228;
+			remoteInfo = "gRPC-C++";
+		};
+		52866315232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9C7C87B5D0A6752AFA2642F1BCA967A3;
+			remoteInfo = "gRPC-C++-gRPCCertificates-Cpp";
+		};
+		52866317232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B471867C535B02FA55D87E260F6480F8;
+			remoteInfo = "gRPC-Core";
+		};
+		52866319232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C1998E0D8085221AD87F89B614C10E52;
+			remoteInfo = GTMSessionFetcher;
+		};
+		5286631B232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0A9F46A999C47653013D3AD854352507;
+			remoteInfo = "leveldb-library";
+		};
+		5286631D232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06FC5C9CF96D60C50FCD47D339C91951;
+			remoteInfo = nanopb;
+		};
+		5286631F232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EBB7229949F245BBBBF057918FFA1A9F;
 			remoteInfo = "Pods-Keepmate";
 		};
-		52577EA5232B442200E18517 /* PBXContainerItemProxy */ = {
+		52866321232F5C64005948C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C2105C94812B6214B154F54DCEDB72AC;
+			remoteInfo = Protobuf;
+		};
+		52866323232F5C64005948C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E97D43C46A45EE515A4DA3AF94398441;
 			remoteInfo = SVProgressHUD;
-		};
-		52577EB1232B7A4700E18517 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0383903D05EDD5C442C682C1F7A1752D;
-			remoteInfo = ChameleonFramework;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,10 +183,11 @@
 		28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepmate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241F934232C80C600662488 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5241F942232CD84D00662488 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		52577E9D232B442200E18517 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		52577EAA232B7A4600E18517 /* Keepmate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keepmate-Bridging-Header.h"; sourceTree = "<group>"; };
 		52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		52577EB6232BAF1300E18517 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		528662DB232F55A9005948C5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		528662DD232F5C63005948C5 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilelViewController.swift; sourceTree = "<group>"; };
 		52A6D63822D89F1400D0670B /* Keepmate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keepmate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A6D63B22D89F1400D0670B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +203,7 @@
 		52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		52F064DF22F911A00023266D /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		52F064E322FB00B90023266D /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		52FA8F7B232FCF010091EBD7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepmate.debug.xcconfig"; path = "Target Support Files/Pods-Keepmate/Pods-Keepmate.debug.xcconfig"; sourceTree = "<group>"; };
 		EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepmate.release.xcconfig"; path = "Target Support Files/Pods-Keepmate/Pods-Keepmate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,16 +220,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52577E9E232B442200E18517 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52577EB2232B7A4700E18517 /* ChameleonFramework.framework */,
-				52577EA4232B442200E18517 /* Pods_Keepmate.framework */,
-				52577EA6232B442200E18517 /* SVProgressHUD.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		52577EB5232BAEDA00E18517 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +227,34 @@
 				5241F934232C80C600662488 /* LoginViewController.swift */,
 			);
 			path = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		528662DE232F5C63005948C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				528662FC232F5C64005948C5 /* openssl_grpc.framework */,
+				528662FE232F5C64005948C5 /* ChameleonFramework.framework */,
+				52866300232F5C64005948C5 /* FirebaseAuth.framework */,
+				52866302232F5C64005948C5 /* FirebaseCore.framework */,
+				52866304232F5C64005948C5 /* FirebaseCoreDiagnostics.framework */,
+				52866306232F5C64005948C5 /* FirebaseDatabase.framework */,
+				52866308232F5C64005948C5 /* FirebaseFirestore.framework */,
+				5286630A232F5C64005948C5 /* FirebaseInstanceID.framework */,
+				5286630C232F5C64005948C5 /* FirebaseStorage.framework */,
+				5286630E232F5C64005948C5 /* GoogleDataTransport.framework */,
+				52866310232F5C64005948C5 /* GoogleDataTransportCCTSupport.framework */,
+				52866312232F5C64005948C5 /* GoogleUtilities.framework */,
+				52866314232F5C64005948C5 /* grpcpp.framework */,
+				52866316232F5C64005948C5 /* gRPCCertificates-Cpp.bundle */,
+				52866318232F5C64005948C5 /* grpc.framework */,
+				5286631A232F5C64005948C5 /* GTMSessionFetcher.framework */,
+				5286631C232F5C64005948C5 /* leveldb.framework */,
+				5286631E232F5C64005948C5 /* nanopb.framework */,
+				52866320232F5C64005948C5 /* Pods_Keepmate.framework */,
+				52866322232F5C64005948C5 /* Protobuf.framework */,
+				52866324232F5C64005948C5 /* SVProgressHUD.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		52A6D62F22D89F1400D0670B = {
@@ -133,7 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				52C9B62623237886005962A3 /* Supporting Files */,
-				52A6D65322D8AF1A00D0670B /* Utils */,
+				52A6D65322D8AF1A00D0670B /* Utilities */,
 				52A6D65922D8B77B00D0670B /* Assets.xcassets */,
 				52A6D65522D8AF4D00D0670B /* Views */,
 				52A6D65422D8AF3B00D0670B /* Models */,
@@ -167,11 +315,12 @@
 			path = BWWalkthrough;
 			sourceTree = "<group>";
 		};
-		52A6D65322D8AF1A00D0670B /* Utils */ = {
+		52A6D65322D8AF1A00D0670B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52FA8F7B232FCF010091EBD7 /* Extension.swift */,
 			);
-			path = Utils;
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		52A6D65422D8AF3B00D0670B /* Models */ = {
@@ -203,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				52A6D64722D89F1500D0670B /* Info.plist */,
+				528662DB232F55A9005948C5 /* GoogleService-Info.plist */,
 				52577EAA232B7A4600E18517 /* Keepmate-Bridging-Header.h */,
 				52A6D63B22D89F1400D0670B /* AppDelegate.swift */,
 			);
@@ -227,7 +377,7 @@
 		A927E56BF05A991B02C5B348 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				52577E9D232B442200E18517 /* Pods.xcodeproj */,
+				528662DD232F5C63005948C5 /* Pods.xcodeproj */,
 				CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */,
 				EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */,
 			);
@@ -298,8 +448,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52577E9E232B442200E18517 /* Products */;
-					ProjectRef = 52577E9D232B442200E18517 /* Pods.xcodeproj */;
+					ProductGroup = 528662DE232F5C63005948C5 /* Products */;
+					ProjectRef = 528662DD232F5C63005948C5 /* Pods.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -310,25 +460,151 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		52577EA4232B442200E18517 /* Pods_Keepmate.framework */ = {
+		528662FC232F5C64005948C5 /* openssl_grpc.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = Pods_Keepmate.framework;
-			remoteRef = 52577EA3232B442200E18517 /* PBXContainerItemProxy */;
+			path = openssl_grpc.framework;
+			remoteRef = 528662FB232F5C64005948C5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		52577EA6232B442200E18517 /* SVProgressHUD.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SVProgressHUD.framework;
-			remoteRef = 52577EA5232B442200E18517 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		52577EB2232B7A4700E18517 /* ChameleonFramework.framework */ = {
+		528662FE232F5C64005948C5 /* ChameleonFramework.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = ChameleonFramework.framework;
-			remoteRef = 52577EB1232B7A4700E18517 /* PBXContainerItemProxy */;
+			remoteRef = 528662FD232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866300232F5C64005948C5 /* FirebaseAuth.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseAuth.framework;
+			remoteRef = 528662FF232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866302232F5C64005948C5 /* FirebaseCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCore.framework;
+			remoteRef = 52866301232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866304232F5C64005948C5 /* FirebaseCoreDiagnostics.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseCoreDiagnostics.framework;
+			remoteRef = 52866303232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866306232F5C64005948C5 /* FirebaseDatabase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseDatabase.framework;
+			remoteRef = 52866305232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866308232F5C64005948C5 /* FirebaseFirestore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseFirestore.framework;
+			remoteRef = 52866307232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5286630A232F5C64005948C5 /* FirebaseInstanceID.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseInstanceID.framework;
+			remoteRef = 52866309232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5286630C232F5C64005948C5 /* FirebaseStorage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FirebaseStorage.framework;
+			remoteRef = 5286630B232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5286630E232F5C64005948C5 /* GoogleDataTransport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransport.framework;
+			remoteRef = 5286630D232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866310232F5C64005948C5 /* GoogleDataTransportCCTSupport.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleDataTransportCCTSupport.framework;
+			remoteRef = 5286630F232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866312232F5C64005948C5 /* GoogleUtilities.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GoogleUtilities.framework;
+			remoteRef = 52866311232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866314232F5C64005948C5 /* grpcpp.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = grpcpp.framework;
+			remoteRef = 52866313232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866316232F5C64005948C5 /* gRPCCertificates-Cpp.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "gRPCCertificates-Cpp.bundle";
+			remoteRef = 52866315232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866318232F5C64005948C5 /* grpc.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = grpc.framework;
+			remoteRef = 52866317232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5286631A232F5C64005948C5 /* GTMSessionFetcher.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GTMSessionFetcher.framework;
+			remoteRef = 52866319232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5286631C232F5C64005948C5 /* leveldb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = leveldb.framework;
+			remoteRef = 5286631B232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5286631E232F5C64005948C5 /* nanopb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = nanopb.framework;
+			remoteRef = 5286631D232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866320232F5C64005948C5 /* Pods_Keepmate.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_Keepmate.framework;
+			remoteRef = 5286631F232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866322232F5C64005948C5 /* Protobuf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Protobuf.framework;
+			remoteRef = 52866321232F5C64005948C5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52866324232F5C64005948C5 /* SVProgressHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SVProgressHUD.framework;
+			remoteRef = 52866323232F5C64005948C5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -344,6 +620,7 @@
 				52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */,
 				52A6D65A22D8B77B00D0670B /* Assets.xcassets in Resources */,
 				52A6D64122D89F1400D0670B /* Main.storyboard in Resources */,
+				528662DC232F55A9005948C5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +676,7 @@
 				52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */,
 				52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */,
 				52A6D65222D8AEE700D0670B /* BWWalkthroughViewController.swift in Sources */,
+				52FA8F7C232FCF010091EBD7 /* Extension.swift in Sources */,
 				5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */,
 				52A6D65122D8AEE700D0670B /* BWWalkthroughPageViewController.swift in Sources */,
 				52EF59ED22FD07AC00FC8263 /* SqueezeNet.mlmodel in Sources */,

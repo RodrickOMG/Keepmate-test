@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import Firebase
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var usernameTextfield: UITextField!
+    @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
     
@@ -24,32 +25,61 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
+        
         SVProgressHUD.show()
         
-        BmobUser.loginWithUsername(inBackground: usernameTextfield.text!, password: passwordTextfield.text!)
-        { (user, error) in
-            if error != nil {
-                print(error!.localizedDescription)
+        guard let email = emailTextfield.text, email.count>0  else { return }
+        guard let password = passwordTextfield.text, password.count>0  else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error: Error?) in
+            
+            if let err = error{
+                print("Failed to sign in, reason: ", err)
             } else {
-                print("Login successfully")
+                print("Successfully sign in: ", user?.user.email ?? "")
                 UserDefaults.standard.set(true, forKey: "everLaunched")
-                SVProgressHUD.dismiss()
                 let main = UIStoryboard(name: "Main", bundle: nil)
                 let tabViewController = main.instantiateInitialViewController()
                 UIApplication.shared.keyWindow?.rootViewController = tabViewController
             }
-            
         }
+        
+        SVProgressHUD.dismiss()
+        
+//        BmobUser.loginWithUsername(inBackground: usernameTextfield.text!, password: passwordTextfield.text!)
+//        { (user, error) in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            } else {
+//                print("Login successfully")
+//                UserDefaults.standard.set(true, forKey: "everLaunched")
+//                SVProgressHUD.dismiss()
+//                let main = UIStoryboard(name: "Main", bundle: nil)
+//                let tabViewController = main.instantiateInitialViewController()
+//                UIApplication.shared.keyWindow?.rootViewController = tabViewController
+//            }
+    
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.isEnabled = false
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func handleTextInputChange(_ sender: Any) {
+        let isFormValid = emailTextfield.text?.count ?? 0 > 0 && passwordTextfield.text?.count ?? 0 > 0
+        if isFormValid{
+            loginButton.backgroundColor = UIColor.rgb(red: 255, green: 125, blue: 38)
+            loginButton.isEnabled = true
+        } else {
+            loginButton.backgroundColor = UIColor.rgb(red: 255, green: 160, blue: 38)
+            loginButton.isEnabled = false
+        }
+    }
     
-
     /*
     // MARK: - Navigation
 

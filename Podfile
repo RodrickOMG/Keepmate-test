@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '12.0'
+# platform :ios, '12.2'
 
 target 'Keepmate' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -9,6 +9,11 @@ target 'Keepmate' do
   pod 'BmobSDK'
   pod 'SVProgressHUD'
   pod 'ChameleonFramework/Swift'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
 
 end
 

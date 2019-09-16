@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate {
+class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -35,11 +35,11 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         let view = UIView()
         view.backgroundColor = .mainBlue
         
-        view.addSubview(profileImageView)
-        profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.anchor(top: view.topAnchor, paddingTop: 95,
+        view.addSubview(profilePicButton)
+        profilePicButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        profilePicButton.anchor(top: view.topAnchor, paddingTop: 95,
                                 width: 110, height: 110)
-        profileImageView.layer.cornerRadius = 110 / 2
+        profilePicButton.layer.cornerRadius = 110 / 2
         
         view.addSubview(messageButton)
         messageButton.anchor(top: view.topAnchor, left: view.leftAnchor,
@@ -51,7 +51,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         
         view.addSubview(nameLabel)
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        nameLabel.anchor(top: profileImageView.bottomAnchor, paddingTop: 12)
+        nameLabel.anchor(top: profilePicButton.bottomAnchor, paddingTop: 12)
         
         view.addSubview(emailLabel)
         emailLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -60,7 +60,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         return view
     }()
     
-    let profileImageView: UIButton = {
+    let profilePicButton: UIButton = {
         let iv = UIButton()
         iv.setImage(UIImage(named: "venom"), for: .normal)
         iv.contentMode = .scaleAspectFill
@@ -70,6 +70,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         iv.layer.borderWidth = 3
         iv.layer.borderColor = UIColor.white.cgColor
         iv.isUserInteractionEnabled = true
+        iv.addTarget(self, action: #selector(handleProfilePicture), for: .touchUpInside)
         return iv
     }()
     
@@ -135,51 +136,97 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
     
     @objc func handleProfilePicture() {
         //setup profile picture or change it
-    }
-}
-
-extension UIColor {
-    static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
-        return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1)
+        let actionSheet = UIAlertController(title: "上传头像", message: nil, preferredStyle: .actionSheet)
+        let cancelBtn = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        
+        
+        let takePhotos = UIAlertAction(title: "拍照", style: .destructive, handler: {
+            (action: UIAlertAction) -> Void in
+            
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let picker = UIImagePickerController()
+                picker.sourceType = .camera
+                picker.delegate = self
+                picker.allowsEditing = true
+                self.present(picker, animated: true, completion: nil)
+                
+            }
+            else
+            {
+                print("模拟其中无法打开照相机,请在真机中使用");
+            }
+            
+        })
+        let selectPhotos = UIAlertAction(title: "相册选取", style: .default, handler: {
+            (action:UIAlertAction)
+            -> Void in
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            picker.allowsEditing = true
+            self.present(picker, animated: true, completion: nil)
+            
+        })
+        actionSheet.addAction(cancelBtn)
+        actionSheet.addAction(takePhotos)
+        actionSheet.addAction(selectPhotos)
+        self.present(actionSheet, animated: true, completion: nil)
+        
     }
     
-    static let mainBlue = UIColor.rgb(red: 0, green: 150, blue: 255)
-}
-
-extension UIView {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let originalImage = info[.originalImage] as? UIImage {
+            profilePicButton.setImage(originalImage, for: .normal)
+        } else if let editImage = info[.editedImage] as? UIImage{
+            profilePicButton.setImage(editImage, for: .normal)
+        }
+        
+        
+        dismiss(animated: true, completion: { self.uploadProfilePic() })
+    }
     
-    func anchor(top: NSLayoutYAxisAnchor? = nil, left: NSLayoutXAxisAnchor? = nil, bottom: NSLayoutYAxisAnchor? = nil, right: NSLayoutXAxisAnchor? = nil, paddingTop: CGFloat? = 0,
-                paddingLeft: CGFloat? = 0, paddingBottom: CGFloat? = 0, paddingRight: CGFloat? = 0, width: CGFloat? = nil, height: CGFloat? = nil) {
+    func uploadProfilePic() {
+        guard let image = self.profilePicButton.imageView?.image else { return }
+        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
         
-        translatesAutoresizingMaskIntoConstraints = false
         
-        if let top = top {
-            topAnchor.constraint(equalTo: top, constant: paddingTop!).isActive = true
+        //Home目录
+        let homeDirectory = NSHomeDirectory()
+        let documentPath = homeDirectory + "/Documents"
+        //文件管理器
+        let fileManager: FileManager = FileManager.default
+        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+        do {
+            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
         }
-        
-        if let left = left {
-            leftAnchor.constraint(equalTo: left, constant: paddingLeft!).isActive = true
+        catch let error {
+            
         }
+        fileManager.createFile(atPath: documentPath.appendingFormat("/image.png"), contents: uploadData, attributes: nil)
+        //得到选择后沙盒中图片的完整路径
+        let filePath: String = String(format: "%@%@", documentPath, "/image.png")
+        print("filePath:" + filePath)
         
-        if let bottom = bottom {
-            if let paddingBottom = paddingBottom {
-                bottomAnchor.constraint(equalTo: bottom, constant: -paddingBottom).isActive = true
+        let obj = BmobObject(className: "ProfilePic")
+        let file = BmobFile(filePath: filePath)
+        
+        file?.saveInBackground { [weak file] (isSuccessful, error) in
+            if isSuccessful {
+                //如果文件保存成功，则把文件添加到file列
+                let weakFile = file
+                obj?.setObject(weakFile, forKey: "file")
+                obj?.setObject("helloworld", forKey: "name")
+                obj?.saveInBackground(resultBlock: { (success, err) in
+                    if err != nil {
+                        print("save \(error)")
+                    }
+                })
+            }else{
+                print("upload \(error)")
             }
-        }
-        
-        if let right = right {
-            if let paddingRight = paddingRight {
-                rightAnchor.constraint(equalTo: right, constant: -paddingRight).isActive = true
-            }
-        }
-        
-        if let width = width {
-            widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
-        
-        if let height = height {
-            heightAnchor.constraint(equalToConstant: height).isActive = true
         }
     }
+    
+    
 }
 

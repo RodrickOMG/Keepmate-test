@@ -23,12 +23,18 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="handleTextInputChange:" destination="Sv7-pp-shm" eventType="editingDidEnd" id="FJp-vH-kQ7"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzC-3L-VJA">
-                                <rect key="frame" x="141" y="177" width="176" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzC-3L-VJA">
+                                <rect key="frame" x="141.33333333333337" y="177" width="175.66666666666663" height="30"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="handleTextInputChange:" destination="Sv7-pp-shm" eventType="editingChanged" id="7H8-RD-dBZ"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keepmate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hv-yh-UN9">
                                 <rect key="frame" x="20" y="85" width="335" height="46"/>
@@ -52,7 +58,7 @@
                                     <constraint firstAttribute="width" constant="71" id="8Q0-rX-eZC"/>
                                     <constraint firstAttribute="height" constant="30" id="E8w-Cp-vWL"/>
                                 </constraints>
-                                <state key="normal" title="register">
+                                <state key="normal" title="Sign up">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -67,10 +73,10 @@
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC6-R7-h5P" userLabel="Login">
                                 <rect key="frame" x="18" y="297" width="339" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.4897860275" blue="0.14797424510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.62745098039215685" blue="0.14797424510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Login">
+                                <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.93333333330000001" green="0.81176470590000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -83,8 +89,8 @@
                                     <action selector="loginPressed:" destination="Sv7-pp-shm" eventType="touchUpInside" id="i0q-QR-nGP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiK-rk-7zJ">
-                                <rect key="frame" x="47.000000000000007" y="176" width="78.666666666666686" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiK-rk-7zJ">
+                                <rect key="frame" x="85" y="176" width="41" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -110,21 +116,21 @@
                             <constraint firstItem="KjN-pN-mM1" firstAttribute="leading" secondItem="rC6-R7-h5P" secondAttribute="trailing" constant="-73" id="qjE-8m-dye"/>
                             <constraint firstItem="zvj-R0-8uj" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="52" id="svW-HJ-GzZ"/>
                             <constraint firstItem="zzC-3L-VJA" firstAttribute="centerY" secondItem="iiK-rk-7zJ" secondAttribute="centerY" id="xCA-xe-cYg"/>
-                            <constraint firstItem="iiK-rk-7zJ" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="47" id="yDj-li-s32"/>
+                            <constraint firstItem="iiK-rk-7zJ" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="85" id="yDj-li-s32"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hEj-m8-TwT"/>
                     </view>
                     <navigationItem key="navigationItem" id="I8E-PJ-zLv"/>
                     <connections>
+                        <outlet property="emailTextfield" destination="zzC-3L-VJA" id="mB4-xL-Zr1"/>
                         <outlet property="loginButton" destination="rC6-R7-h5P" id="pna-NR-n8c"/>
                         <outlet property="passwordTextfield" destination="etg-hU-vdC" id="aK1-Dj-Wdp"/>
                         <outlet property="registerButton" destination="KjN-pN-mM1" id="qhm-7Y-pz7"/>
-                        <outlet property="usernameTextfield" destination="zzC-3L-VJA" id="RUR-sE-7LB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fw-gL-mkd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1626.4000000000001" y="-1435.7142857142858"/>
+            <point key="canvasLocation" x="1626.0869565217392" y="-1435.7142857142856"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="ZyN-0B-m86">
@@ -139,12 +145,18 @@
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="handleTextInputChange:" destination="plr-Ik-q6D" eventType="editingDidEnd" id="ODH-VS-oJg"/>
+                                </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-vp-9pa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-vp-9pa">
                                 <rect key="frame" x="141" y="177" width="176" height="30"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="handleTextInputChange:" destination="plr-Ik-q6D" eventType="editingChanged" id="a2L-DN-FRs"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keepmate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtG-cY-Zch">
                                 <rect key="frame" x="20" y="85" width="335" height="46"/>
@@ -163,10 +175,10 @@
                             </label>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-AG-5Ql" userLabel="Register">
                                 <rect key="frame" x="18" y="297" width="339" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.4897860275" blue="0.14797424510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.62745098039215685" blue="0.14797424510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Register">
+                                <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.93333333330000001" green="0.81176470590000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -190,8 +202,8 @@
                                     <action selector="goBack:" destination="plr-Ik-q6D" eventType="touchUpInside" id="COd-Fi-dOp"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-CI-sJV">
-                                <rect key="frame" x="47" y="176" width="79" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQI-CI-sJV">
+                                <rect key="frame" x="85" y="176" width="41" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -214,7 +226,7 @@
                             <constraint firstItem="Wup-vp-9pa" firstAttribute="leading" secondItem="KQI-CI-sJV" secondAttribute="trailing" constant="15" id="STi-vh-JBS"/>
                             <constraint firstItem="Wup-vp-9pa" firstAttribute="top" secondItem="raK-sC-i40" secondAttribute="top" constant="133" id="X9F-Cl-6Ly"/>
                             <constraint firstItem="lIX-gJ-qYq" firstAttribute="leading" secondItem="b8y-q0-0CD" secondAttribute="trailing" constant="15" id="dag-0O-XMd"/>
-                            <constraint firstItem="KQI-CI-sJV" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="47" id="dgu-gp-9ZW"/>
+                            <constraint firstItem="KQI-CI-sJV" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="85" id="dgu-gp-9ZW"/>
                             <constraint firstItem="lIX-gJ-qYq" firstAttribute="top" secondItem="Wup-vp-9pa" secondAttribute="bottom" constant="16" id="dnO-dJ-DeE"/>
                             <constraint firstItem="raK-sC-i40" firstAttribute="trailing" secondItem="mtG-cY-Zch" secondAttribute="trailing" constant="20" id="iB0-dX-phX"/>
                             <constraint firstItem="Wup-vp-9pa" firstAttribute="trailing" secondItem="lIX-gJ-qYq" secondAttribute="trailing" id="uJo-T9-dkJ"/>
@@ -224,8 +236,9 @@
                     <navigationItem key="navigationItem" id="0t2-ws-ABt"/>
                     <connections>
                         <outlet property="backButton" destination="hyX-Bu-JOM" id="5B6-bf-2oa"/>
+                        <outlet property="emailTextfield" destination="Wup-vp-9pa" id="gUR-Fu-gzn"/>
                         <outlet property="passwordTextfield" destination="lIX-gJ-qYq" id="ABC-CZ-S3H"/>
-                        <outlet property="usernameTextfield" destination="Wup-vp-9pa" id="bIC-u0-5xf"/>
+                        <outlet property="signUpButton" destination="J3B-AG-5Ql" id="imB-Di-ajw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCf-Zk-cEa" userLabel="First Responder" sceneMemberID="firstResponder"/>
