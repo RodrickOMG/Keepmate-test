@@ -9,11 +9,6 @@ target 'Keepmate' do
   pod 'BmobSDK'
   pod 'SVProgressHUD'
   pod 'ChameleonFramework/Swift'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Database'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Firestore'
 
 end
 

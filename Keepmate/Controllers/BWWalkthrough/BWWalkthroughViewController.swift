@@ -299,10 +299,5 @@ import UIKit
     override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         adjustOffsetForTransition()
     }
-    func loadMainStoryboard() {
-        UserDefaults.standard.set(true, forKey: "everLaunched")
-        let main = UIStoryboard(name: "Main", bundle: nil)
-        let tabViewController = main.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = tabViewController
-    }
+    
 }

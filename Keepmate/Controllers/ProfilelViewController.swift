@@ -108,6 +108,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
     
     // MARK: - Lifecycle
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -181,51 +182,67 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
             profilePicButton.setImage(editImage, for: .normal)
         }
         
-        
-        dismiss(animated: true, completion: { self.uploadProfilePic() })
+//        dismiss(animated: true, completion: { self.uploadProfilePic() })
     }
     
-    func uploadProfilePic() {
-        guard let image = self.profilePicButton.imageView?.image else { return }
-        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
+//    func uploadProfilePic() {
+//        guard let image = self.profilePicButton.imageView?.image else { return }
+//        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
+//
+//        let filename = NSUUID().uuidString
+//
+//        let storageRef = Storage.storage().reference().child("profile_image").child(filename)
+//
+//        storageRef.putData(uploadData, metadata: nil, completion: { (metadata, err) in
+//
+//            if let err = err {
+//                print("Failed to upload profile image: ", err)
+//                return
+//            }
+//
+//            storageRef.downloadURL(completion: { (downloadURL, err) in
+//
+//                guard let profileImageURL = downloadURL?.absoluteString else { return }
+//                print("Successfully upload profile image: ", profileImageURL)
+//
+////                guard let uid = user?.user.uid else { return }
+////                let dictionaryValues = ["username": username, "profileImageURL": profileImageURL]
+////                let values = [uid: dictionaryValues]
+//
+//                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+//
+//                    if let err = err {
+//                        print("Failed to save user info into db: ", err)
+//                        return
+//                    }
+//
+//                    print("Successfully saved user info to db")
+//                })
+//
+//
+//            })
+//        })
+//
         
+//        //Home目录
+//        let homeDirectory = NSHomeDirectory()
+//        let documentPath = homeDirectory + "/Documents"
+//        //文件管理器
+//        let fileManager: FileManager = FileManager.default
+//        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+//        do {
+//            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
+//        }
+//        catch let error {
+//
+//        }
+//        fileManager.createFile(atPath: documentPath.appendingFormat("/image.png"), contents: uploadData, attributes: nil)
+//        //得到选择后沙盒中图片的完整路径
+//        let filePath: String = String(format: "%@%@", documentPath, "/image.png")
+//        print("filePath:" + filePath)
         
-        //Home目录
-        let homeDirectory = NSHomeDirectory()
-        let documentPath = homeDirectory + "/Documents"
-        //文件管理器
-        let fileManager: FileManager = FileManager.default
-        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
-        do {
-            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
-        }
-        catch let error {
-            
-        }
-        fileManager.createFile(atPath: documentPath.appendingFormat("/image.png"), contents: uploadData, attributes: nil)
-        //得到选择后沙盒中图片的完整路径
-        let filePath: String = String(format: "%@%@", documentPath, "/image.png")
-        print("filePath:" + filePath)
-        
-        let obj = BmobObject(className: "ProfilePic")
-        let file = BmobFile(filePath: filePath)
-        
-        file?.saveInBackground { [weak file] (isSuccessful, error) in
-            if isSuccessful {
-                //如果文件保存成功，则把文件添加到file列
-                let weakFile = file
-                obj?.setObject(weakFile, forKey: "file")
-                obj?.setObject("helloworld", forKey: "name")
-                obj?.saveInBackground(resultBlock: { (success, err) in
-                    if err != nil {
-                        print("save \(error)")
-                    }
-                })
-            }else{
-                print("upload \(error)")
-            }
-        }
-    }
+      
+//    }
     
     
 }

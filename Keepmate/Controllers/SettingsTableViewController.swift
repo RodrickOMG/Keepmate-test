@@ -51,10 +51,10 @@ class SettingsTableViewController: UITableViewController {
             
             let alert = UIAlertController(title: "Log Out", message: "Are you sure?", preferredStyle: .actionSheet)
             let logOutAction = UIAlertAction(title: "Log Out", style: UIAlertAction.Style.destructive, handler:  { (action) in
-                
                 print("Log Out")
                 let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
                 let vc = sb.instantiateViewController(withIdentifier: "Login")
+                vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: true, completion: nil)
             })
             

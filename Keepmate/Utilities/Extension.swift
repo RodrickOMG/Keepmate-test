@@ -14,6 +14,7 @@ extension UIColor {
     }
     
     static let mainBlue = UIColor.rgb(red: 58, green: 72, blue: 135)
+    static let mainPink = UIColor.rgb(red: 238, green: 207, blue: 236)
 }
 
 extension UIView {
@@ -53,4 +54,16 @@ extension UIView {
     }
 }
 
+extension UIViewController {
+    func hideKeyboard() {
+        
+        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        
+        view.endEditing(true)
+        
+    }
+}
 

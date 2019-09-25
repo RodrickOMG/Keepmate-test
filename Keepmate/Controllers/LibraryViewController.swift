@@ -169,6 +169,7 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
     @objc func btnClick(btn:UIButton) {
         print("btn")
         let viewController = WorkoutViewController()
+        viewController.modalPresentationStyle = .fullScreen
         switch btn.tag {
         case 0:
             viewController.tag = "Workout of the Day"

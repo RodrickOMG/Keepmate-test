@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
@@ -21,6 +20,7 @@ class LoginViewController: UIViewController {
     @IBAction func gotoRegister(_ sender: UIButton) {
         let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
         let vc = sb.instantiateViewController(withIdentifier: "Register")
+        vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
     }
     
@@ -31,18 +31,34 @@ class LoginViewController: UIViewController {
         guard let email = emailTextfield.text, email.count>0  else { return }
         guard let password = passwordTextfield.text, password.count>0  else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error: Error?) in
-            
-            if let err = error{
-                print("Failed to sign in, reason: ", err)
+        BmobUser.loginInbackground(withAccount: email, andPassword: password) { (user, error) in
+            if error != nil {
+                print(error!.localizedDescription)
             } else {
-                print("Successfully sign in: ", user?.user.email ?? "")
+                print("Login successfully")
                 UserDefaults.standard.set(true, forKey: "everLaunched")
-                let main = UIStoryboard(name: "Main", bundle: nil)
-                let tabViewController = main.instantiateInitialViewController()
-                UIApplication.shared.keyWindow?.rootViewController = tabViewController
+                SVProgressHUD.dismiss()
+                let sb = UIStoryboard(name:"Main",bundle: Bundle.main)
+                let vc = sb.instantiateViewController(withIdentifier: "MainTable")
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             }
         }
+        
+        
+//        Auth.auth().signIn(withEmail: email, password: password) { (user, error: Error?) in
+//            
+//            if let err = error{
+//                print("Failed to sign in, reason: ", err)
+//            } else {
+//                print("Successfully sign in: ", user?.user.email ?? "")
+//                UserDefaults.standard.set(true, forKey: "everLaunched")
+//                let sb = UIStoryboard(name:"Main",bundle: Bundle.main)
+//                let vc = sb.instantiateViewController(withIdentifier: "MainTable")
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//        }
         
         SVProgressHUD.dismiss()
         
@@ -66,9 +82,12 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton.isEnabled = false
+        
+        self.hideKeyboard()
 
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func handleTextInputChange(_ sender: Any) {
         let isFormValid = emailTextfield.text?.count ?? 0 > 0 && passwordTextfield.text?.count ?? 0 > 0
         if isFormValid{
