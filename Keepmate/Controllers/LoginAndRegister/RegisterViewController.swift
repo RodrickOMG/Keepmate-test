@@ -92,36 +92,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
-//        Auth.auth().createUser(withEmail: email, password: password) { (user, error: Error?) in
-//            if let err = error{
-//                let errmsg = "Failed to create user. " + err.localizedDescription
-//                self.showLabel(errmsg)
-////                print("Failed to create user, reason: ", err)
-//                return
-//            } else {
-//
-//                let cormsg = "Successfullly created user: " + username
-//                self.showLabel(cormsg)
-//
-//                let dataToSave: [String: Any] = ["email": email, "username": username, "password": password]
-//                self.docRef.setData(dataToSave, completion: { (error) in
-//                    if let error = error {
-//                        print("Got an error: \(error.localizedDescription)")
-//                    } else {
-//                        print("Data has been saved!")
-//                    }
-//                })
-//
-//
-//                UserDefaults.standard.set(true, forKey: "everLaunched")
-//                let sb = UIStoryboard(name:"Main",bundle: Bundle.main)
-//                let vc = sb.instantiateViewController(withIdentifier: "MainTable")
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
-//            }
-//
-//        }
-        
          SVProgressHUD.dismiss()
         
 

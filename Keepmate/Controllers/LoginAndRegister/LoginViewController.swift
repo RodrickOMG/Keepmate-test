@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    @IBOutlet weak var signInInput: UIStackView!
     
     @IBAction func gotoRegister(_ sender: UIButton) {
         let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
@@ -33,7 +34,8 @@ class LoginViewController: UIViewController {
         
         BmobUser.loginInbackground(withAccount: email, andPassword: password) { (user, error) in
             if error != nil {
-                print(error!.localizedDescription)
+                let errmsg = "Failed to sign in. " + error!.localizedDescription
+                self.showLabel(errmsg)
             } else {
                 print("Login successfully")
                 UserDefaults.standard.set(true, forKey: "everLaunched")
@@ -46,37 +48,30 @@ class LoginViewController: UIViewController {
         }
         
         
-//        Auth.auth().signIn(withEmail: email, password: password) { (user, error: Error?) in
-//            
-//            if let err = error{
-//                print("Failed to sign in, reason: ", err)
-//            } else {
-//                print("Successfully sign in: ", user?.user.email ?? "")
-//                UserDefaults.standard.set(true, forKey: "everLaunched")
-//                let sb = UIStoryboard(name:"Main",bundle: Bundle.main)
-//                let vc = sb.instantiateViewController(withIdentifier: "MainTable")
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: true, completion: nil)
-//            }
-//        }
-        
         SVProgressHUD.dismiss()
         
-//        BmobUser.loginWithUsername(inBackground: usernameTextfield.text!, password: passwordTextfield.text!)
-//        { (user, error) in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            } else {
-//                print("Login successfully")
-//                UserDefaults.standard.set(true, forKey: "everLaunched")
-//                SVProgressHUD.dismiss()
-//                let main = UIStoryboard(name: "Main", bundle: nil)
-//                let tabViewController = main.instantiateInitialViewController()
-//                UIApplication.shared.keyWindow?.rootViewController = tabViewController
-//            }
     
     }
     
+    
+    let errorLabel: UILabel = {
+        let err = UILabel()
+        err.textAlignment = .center
+        err.textColor = .red
+        err.font = UIFont(name: "Roboto", size: 11.0)
+        err.numberOfLines = 2
+        err.adjustsFontSizeToFitWidth = true
+        err.alpha = 0
+        return err
+    }()
+    
+    func showLabel(_ message: String) {
+        errorLabel.text = message
+        errorLabel.alpha = 1
+        
+        view.addSubview(errorLabel)
+        errorLabel.anchor(top: signInInput.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 32, paddingRight: 32, width: 200, height: 40)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
