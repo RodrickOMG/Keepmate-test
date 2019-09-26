@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // 是第一次启动
             UserDefaults.standard.set(true, forKey: "firstLaunched")
             UserDefaults.standard.set(true, forKey: "everLaunched")
-            print("first")
+            print("first launch")
             let stb = UIStoryboard(name: "BWWalkthrough", bundle: nil)
             let walkthrough = stb.instantiateViewController(withIdentifier: "walk") as! BWWalkthroughViewController
             let page_zero = stb.instantiateViewController(withIdentifier: "walk0")
@@ -44,7 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = walkthrough
         } else {
             UserDefaults.standard.set(false, forKey: "firstLaunched")
-            print("ever")
+            let user = BmobUser.current()
+            if user == nil {
+                let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
+                let vc = sb.instantiateViewController(withIdentifier: "Login")
+                vc.modalPresentationStyle = .fullScreen
+                self.window?.rootViewController = vc
+            }
+            print("ever launched")
         }
         return true
     }

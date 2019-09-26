@@ -243,6 +243,8 @@
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
                                                             <action selector="handleTextInputChange:" destination="plr-Ik-q6D" eventType="editingChanged" id="gAz-Rf-ODH"/>
+                                                            <action selector="usernameLegality:" destination="plr-Ik-q6D" eventType="editingChanged" id="Fn9-nJ-4ZS"/>
+                                                            <action selector="usernameLegality:" destination="plr-Ik-q6D" eventType="editingDidEnd" id="SKG-KA-hT9"/>
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="IUa-iC-dSi"/>
                                                         </connections>
                                                     </textField>

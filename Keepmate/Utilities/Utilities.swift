@@ -11,7 +11,7 @@ import Foundation
 
 class Utilities{
     
-    static func isPasswordValid(_ password : String) -> Bool {
+    static func isPasswordValid(_ password: String) -> Bool {
         let txt = password
         if txt.rangeOfCharacter(from: CharacterSet.uppercaseLetters) == nil {
             return false
@@ -24,8 +24,28 @@ class Utilities{
         }
         else if txt.count < 8 {
             return false
+        } else {
+            return true
         }
-        else {
+    }
+    
+    static func isUsernameValid(_ username: String) -> Bool {
+        let txt = username
+        if txt.rangeOfCharacter(from: CharacterSet.whitespacesAndNewlines) != nil {
+            return false
+        }
+        else if txt.rangeOfCharacter(from: CharacterSet.nonBaseCharacters) != nil {
+            return false
+        }
+        else if txt.rangeOfCharacter(from: CharacterSet.illegalCharacters) != nil {
+            return false
+        }
+        else if txt.rangeOfCharacter(from: CharacterSet.symbols) != nil {
+            return false
+        }
+        else if txt.count < 4 || txt.count > 14 {
+            return false
+        } else {
             return true
         }
     }

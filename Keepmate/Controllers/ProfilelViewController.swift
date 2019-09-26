@@ -30,6 +30,13 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
 //            }
 //        }
 //    }
+    func getCurrentUser() {
+        let user = BmobUser.current()
+        print(user!.username ?? "Not Logged In")
+        nameLabel.text = user!.username ?? "Not Logged In"
+        emailLabel.text = user!.email ?? ""
+    }
+    
 
     lazy var containerView: UIView = {
         let view = UIView()
@@ -111,6 +118,8 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getCurrentUser()
         
         view.backgroundColor = .white
         
