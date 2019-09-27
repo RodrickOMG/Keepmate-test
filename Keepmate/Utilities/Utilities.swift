@@ -31,6 +31,7 @@ class Utilities{
     
     static func isUsernameValid(_ username: String) -> Bool {
         let txt = username
+        print(txt.count)
         if txt.rangeOfCharacter(from: CharacterSet.whitespacesAndNewlines) != nil {
             return false
         }
@@ -44,6 +45,15 @@ class Utilities{
             return false
         }
         else if txt.count < 4 || txt.count > 14 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    static func isEmailValid(_ email: String) -> Bool {
+        let txt = email
+        if txt.count == 0 {
             return false
         } else {
             return true

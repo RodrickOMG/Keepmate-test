@@ -232,7 +232,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="handleTextInputChange:" destination="plr-Ik-q6D" eventType="editingChanged" id="a2L-DN-FRs"/>
+                                                            <action selector="emailValidity:" destination="plr-Ik-q6D" eventType="editingChanged" id="Ffk-nQ-7MV"/>
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="7Xt-xO-yRU"/>
                                                         </connections>
                                                     </textField>
@@ -242,9 +242,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="handleTextInputChange:" destination="plr-Ik-q6D" eventType="editingChanged" id="gAz-Rf-ODH"/>
-                                                            <action selector="usernameLegality:" destination="plr-Ik-q6D" eventType="editingChanged" id="Fn9-nJ-4ZS"/>
-                                                            <action selector="usernameLegality:" destination="plr-Ik-q6D" eventType="editingDidEnd" id="SKG-KA-hT9"/>
+                                                            <action selector="usernameValidity:" destination="plr-Ik-q6D" eventType="editingChanged" id="Fn9-nJ-4ZS"/>
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="IUa-iC-dSi"/>
                                                         </connections>
                                                     </textField>
@@ -254,7 +252,6 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
-                                                            <action selector="handleTextInputChange:" destination="plr-Ik-q6D" eventType="editingDidEnd" id="ODH-VS-oJg"/>
                                                             <action selector="passwordSecure:" destination="plr-Ik-q6D" eventType="editingChanged" id="QCp-rx-SjB"/>
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="5mz-Od-FbL"/>
                                                         </connections>

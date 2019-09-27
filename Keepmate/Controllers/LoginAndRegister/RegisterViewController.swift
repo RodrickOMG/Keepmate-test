@@ -27,6 +27,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     var passwordIsValid = false
     var usernameIsValid = false
+    var emailIsValid = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,13 +122,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
-    @IBAction func handleTextInputChange(_ sender: Any) {
-        
-        let isFormValid = emailTextfield.text?.count ?? 0 > 0 && passwordTextfield.text?.count ?? 0 > 0 && usernametextfield.text?.count ?? 0 > 0
-        
-        
-        if isFormValid && passwordIsValid && usernameIsValid {
+    func judgeValidity() {
+        if emailIsValid && passwordIsValid && usernameIsValid {
             signUpButton.isEnabled = true
             signUpButton.backgroundColor = UIColor.rgb(red: 255, green: 125, blue: 38)
         } else {
@@ -135,6 +131,18 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             signUpButton.backgroundColor = UIColor.rgb(red: 255, green: 160, blue: 38)
         }
     }
+    
+    @IBAction func emailValidity(_ sender: Any) {
+        if emailTextfield.text!.count > 0 {
+            emailIsValid = true
+        } else {
+            emailIsValid = false
+        }
+        
+        judgeValidity()
+        
+    }
+    
 
     @IBAction func passwordSecure(_ sender: Any) {
         if passwordTextfield.text!.count > 0 {
@@ -148,20 +156,24 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
                 passwordIsValid = true
             }
         }
+        judgeValidity()
     }
     
-    @IBAction func usernameLegality(_ sender: Any) {
+    @IBAction func usernameValidity(_ sender: Any) {
         if usernametextfield.text!.count > 0 {
+            print(usernametextfield.text!)
+            print(Utilities.isUsernameValid(usernametextfield.text!))
             if Utilities.isUsernameValid(usernametextfield.text!) == false {
                 //username is illegal
                 let err = "Username must be at least 4 characters and most 14 characters. It couldn't contain any special character and whitespace"
                 showLabel(err, usernameErrorLabel)
                 usernameIsValid = false
             } else {
-               hideLabel(usernameErrorLabel)
+                hideLabel(usernameErrorLabel)
                 usernameIsValid = true
             }
         }
+        judgeValidity()
     }
     
     
