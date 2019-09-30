@@ -33,6 +33,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         signUpButton.isEnabled = false
+        signUpButton.backgroundColor = UIColor.rgb(red: 95, green: 196, blue: 141, alpha: 0.8)
         
         self.hideKeyboard()
         
@@ -50,7 +51,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         let err = UILabel()
         err.textAlignment = .center
         err.textColor = .red
-        err.backgroundColor = .mainBlue
+        err.backgroundColor = .systemGroupedBackground
         err.layer.cornerRadius = 5
         err.clipsToBounds = true
         err.font = UIFont(name: "Roboto", size: 11.0)
@@ -64,7 +65,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         let err = UILabel()
         err.textAlignment = .center
         err.textColor = .red
-        err.backgroundColor = .mainBlue
+        err.backgroundColor = .systemGroupedBackground
         err.layer.cornerRadius = 5
         err.clipsToBounds = true
         err.font = UIFont(name: "Roboto", size: 11.0)
@@ -125,10 +126,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     func judgeValidity() {
         if emailIsValid && passwordIsValid && usernameIsValid {
             signUpButton.isEnabled = true
-            signUpButton.backgroundColor = UIColor.rgb(red: 255, green: 125, blue: 38)
+            signUpButton.backgroundColor = UIColor.rgb(red: 95, green: 196, blue: 141)
         } else {
             signUpButton.isEnabled = false
-            signUpButton.backgroundColor = UIColor.rgb(red: 255, green: 160, blue: 38)
+            signUpButton.backgroundColor = UIColor.rgb(red: 95, green: 196, blue: 141, alpha: 0.8)
         }
     }
     

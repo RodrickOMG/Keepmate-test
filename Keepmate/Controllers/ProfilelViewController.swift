@@ -38,23 +38,55 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
     }
     
 
+    lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        view.backgroundColor = UIColor.white
+        
+        let screenFrame = UIScreen.main.bounds
+        let screenWidth = screenFrame.size.width
+        let screenHeight = screenFrame.size.height
+        
+        scroll.translatesAutoresizingMaskIntoConstraints = false
+        scroll.alwaysBounceVertical = true
+        scroll.bounces = true
+        scroll.isDirectionalLockEnabled = false //default false
+        scroll.isPagingEnabled = false
+        
+        scroll.scrollIndicatorInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 0)
+        //add additional scroll area around content
+        scroll.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        scroll.showsVerticalScrollIndicator = true
+        scroll.indicatorStyle = .black
+        scroll.bouncesZoom = true
+        //如果正显示着键盘，拖动，则键盘撤回
+        scroll.keyboardDismissMode = .onDrag
+        scroll.flashScrollIndicators()
+        
+        scroll.delegate = self
+        
+        scroll.addSubview(containerView)
+        containerView.anchor(top: scroll.topAnchor, left: scroll.leftAnchor, paddingTop: 0, paddingLeft: 0, width: UIScreen.main.bounds.width, height: 220 )
+        
+        return scroll
+    }()
+    
     lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .mainBlue
         
         view.addSubview(profilePicButton)
         profilePicButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profilePicButton.anchor(top: view.topAnchor, paddingTop: 95,
+        profilePicButton.anchor(top: view.topAnchor, paddingTop: 20,
                                 width: 110, height: 110)
         profilePicButton.layer.cornerRadius = 110 / 2
         
         view.addSubview(messageButton)
         messageButton.anchor(top: view.topAnchor, left: view.leftAnchor,
-                             paddingTop: 64 + 40, paddingLeft: 32, width: 32, height: 32)
+                             paddingTop: 20, paddingLeft: 32, width: 32, height: 32)
         
         view.addSubview(followButton)
         followButton.anchor(top: view.topAnchor, right: view.rightAnchor,
-                            paddingTop: 64 + 40, paddingRight: 32, width: 32, height: 32)
+                            paddingTop: 20, paddingRight: 32, width: 32, height: 32)
         
         view.addSubview(nameLabel)
         nameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -69,7 +101,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
     
     let profilePicButton: UIButton = {
         let iv = UIButton()
-        iv.setImage(UIImage(named: "venom"), for: .normal)
+        iv.setImage(UIImage(named: "default_profile_pic"), for: .normal)
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.imageView?.contentMode = .scaleAspectFill
@@ -123,9 +155,9 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         
         view.backgroundColor = .white
         
-        view.addSubview(containerView)
-        containerView.anchor(top: view.topAnchor, left: view.leftAnchor,
-                             right: view.rightAnchor, height: 300)
+        view.addSubview(scrollView)
+        
+        scrollView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
         
         //save()
     }
@@ -191,9 +223,51 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
             profilePicButton.setImage(editImage, for: .normal)
         }
         
-//        dismiss(animated: true, completion: { self.uploadProfilePic() })
+        dismiss(animated: true, completion: { self.uploadProfilePic() })
     }
     
+    
+    func uploadProfilePic() {
+        guard let image = self.profilePicButton.imageView?.image else { return }
+        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
+        
+        //Home目录
+        let homeDirectory = NSHomeDirectory()
+        let documentPath = homeDirectory + "/Documents"
+        //文件管理器
+        let fileManager: FileManager = FileManager.default
+        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+        do {
+            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
+        }
+        catch let error {
+
+        }
+        fileManager.createFile(atPath: documentPath.appendingFormat("/image.png"), contents: uploadData, attributes: nil)
+        //得到选择后沙盒中图片的完整路径
+        let filePath: String = String(format: "%@%@", documentPath, "/image.png")
+        print("filePath:" + filePath)
+        
+        let user = BmobUser.current()
+        let file = BmobFile(filePath: filePath)
+
+        file!.saveInBackground(byDataSharding: { (isSuccessful, error) in
+            if isSuccessful {
+                let weakFile = file
+                user!.setObject(weakFile, forKey: "profilePic")
+                user!.setObject("helloworld", forKey: "profilePicName")
+                user!.updateInBackground(resultBlock: {(isSuccessful, error) in
+                    if isSuccessful {
+                        print("Successfully upload profile picture")
+                    } else {
+                        print(error!.localizedDescription)
+                    }
+                })
+            }
+        })
+        
+        
+    }
 //    func uploadProfilePic() {
 //        guard let image = self.profilePicButton.imageView?.image else { return }
 //        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }

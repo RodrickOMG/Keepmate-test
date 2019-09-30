@@ -16,8 +16,18 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
+    
     @IBOutlet weak var signInInput: UIStackView!
     
+    
+    var passwordIsValid = false
+    var emailIsValid = false
+//    func setTextfield() {
+//        emailTextfield.layer.borderColor = CGColor.init(srgbRed: 0, green: 0, blue: 0, alpha: 1)
+//        emailTextfield.layer.cornerRadius = 10
+//        emailTextfield.layer.borderWidth = 1
+//    }
+//
     @IBAction func gotoRegister(_ sender: UIButton) {
         let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
         let vc = sb.instantiateViewController(withIdentifier: "Register")
@@ -73,27 +83,47 @@ class LoginViewController: UIViewController {
         errorLabel.anchor(top: signInInput.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 32, paddingRight: 32, width: 200, height: 40)
     }
     
+    func judgeValidity() {
+        if emailIsValid && passwordIsValid {
+            loginButton.isEnabled = true
+            loginButton.backgroundColor = UIColor.rgb(red: 95, green: 196, blue: 141)
+        } else {
+            loginButton.isEnabled = false
+            loginButton.backgroundColor = UIColor.rgb(red: 95, green: 196, blue: 141, alpha: 0.8)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginButton.isEnabled = false
+        loginButton.backgroundColor = UIColor.rgb(red: 95, green: 196, blue: 141, alpha: 0.8)
         
         self.hideKeyboard()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func handleTextInputChange(_ sender: Any) {
-        let isFormValid = emailTextfield.text?.count ?? 0 > 0 && passwordTextfield.text?.count ?? 0 > 0
-        if isFormValid{
-            loginButton.backgroundColor = UIColor.rgb(red: 255, green: 125, blue: 38)
-            loginButton.isEnabled = true
+    
+    @IBAction func isEmailValid(_ sender: Any) {
+        
+        if emailTextfield.text!.count > 0 {
+            emailIsValid = true
         } else {
-            loginButton.backgroundColor = UIColor.rgb(red: 255, green: 160, blue: 38)
-            loginButton.isEnabled = false
+            emailIsValid = false
         }
+        judgeValidity()
     }
     
+    @IBAction func isPasswordValid(_ sender: Any) {
+        if passwordTextfield.text!.count > 8 {
+            passwordIsValid = true
+        } else {
+            passwordIsValid = false
+        }
+        
+        judgeValidity()
+    }
     /*
     // MARK: - Navigation
 

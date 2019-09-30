@@ -18,36 +18,16 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keepmate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hv-yh-UN9">
                                 <rect key="frame" x="20" y="85" width="374" height="45.666666666666657"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjN-pN-mM1">
-                                <rect key="frame" x="323" y="147" width="71" height="30"/>
-                                <color key="backgroundColor" red="0.50196078431372548" green="0.60578981164383561" blue="0.76479559075342463" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="71" id="8Q0-rX-eZC"/>
-                                    <constraint firstAttribute="height" constant="30" id="E8w-Cp-vWL"/>
-                                </constraints>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="gotoRegister:" destination="Sv7-pp-shm" eventType="touchUpInside" id="TCH-Q1-eTK"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rC6-R7-h5P" userLabel="Login">
-                                <rect key="frame" x="16" y="344" width="378" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.62745098039215685" blue="0.14797424510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
+                                <rect key="frame" x="40" y="344" width="330" height="48"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="0.76862745098039209" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Sign In">
-                                    <color key="titleColor" red="0.93333333330000001" green="0.81176470590000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -66,42 +46,42 @@
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="82"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ddl-YN-PAb">
-                                                <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="82"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="82"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-Iq-ofF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="73.666666666666671" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="电子邮箱" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw8-Iq-ofF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="30"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4H-bx-G2S">
-                                                        <rect key="frame" x="0.0" y="50" width="73.666666666666671" height="32"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4H-bx-G2S">
+                                                        <rect key="frame" x="0.0" y="50" width="69.333333333333329" height="32"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="csl-gm-wio">
-                                                <rect key="frame" x="91.666666666666671" y="0.0" width="250.33333333333331" height="82"/>
+                                                <rect key="frame" x="87.333333333333329" y="0.0" width="254.66666666666669" height="82"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzC-3L-VJA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="250.33333333333334" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入电子邮箱" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzC-3L-VJA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="254.66666666666666" height="34"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="handleTextInputChange:" destination="Sv7-pp-shm" eventType="editingChanged" id="7H8-RD-dBZ"/>
+                                                            <action selector="isEmailValid:" destination="Sv7-pp-shm" eventType="editingChanged" id="rd1-kc-C4h"/>
                                                             <outlet property="delegate" destination="Sv7-pp-shm" id="Ep4-QS-xFM"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etg-hU-vdC">
-                                                        <rect key="frame" x="0.0" y="50" width="250.33333333333334" height="32"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etg-hU-vdC">
+                                                        <rect key="frame" x="0.0" y="50" width="254.66666666666666" height="32"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                         <connections>
-                                                            <action selector="handleTextInputChange:" destination="Sv7-pp-shm" eventType="editingDidEnd" id="FJp-vH-kQ7"/>
+                                                            <action selector="isPasswordValid:" destination="Sv7-pp-shm" eventType="editingChanged" id="4Pa-Nq-JV1"/>
                                                             <outlet property="delegate" destination="Sv7-pp-shm" id="f7k-mS-8th"/>
                                                         </connections>
                                                     </textField>
@@ -119,22 +99,45 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjN-pN-mM1">
+                                <rect key="frame" x="55" y="408" width="82" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="新用户注册">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gotoRegister:" destination="Sv7-pp-shm" eventType="touchUpInside" id="TCH-Q1-eTK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-bf-ZyA">
+                                <rect key="frame" x="289" y="409" width="70" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="忘记密码?">
+                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KjN-pN-mM1" firstAttribute="top" secondItem="hEj-m8-TwT" secondAttribute="top" constant="103" id="AAc-OV-kvf"/>
+                            <constraint firstItem="hEj-m8-TwT" firstAttribute="trailing" secondItem="q0a-bf-ZyA" secondAttribute="trailing" constant="55" id="4Iy-bA-wc2"/>
+                            <constraint firstItem="q0a-bf-ZyA" firstAttribute="top" secondItem="rC6-R7-h5P" secondAttribute="bottom" constant="17" id="97e-iA-NNT"/>
                             <constraint firstItem="5Hv-yh-UN9" firstAttribute="top" secondItem="hEj-m8-TwT" secondAttribute="top" constant="41" id="Fch-O3-UTo"/>
-                            <constraint firstItem="KjN-pN-mM1" firstAttribute="top" secondItem="5Hv-yh-UN9" secondAttribute="bottom" constant="16.333333333333343" id="Lgp-O0-P2A"/>
+                            <constraint firstItem="KjN-pN-mM1" firstAttribute="centerY" secondItem="q0a-bf-ZyA" secondAttribute="centerY" id="Gb5-u5-e9G"/>
                             <constraint firstItem="rC6-R7-h5P" firstAttribute="centerX" secondItem="5Hv-yh-UN9" secondAttribute="centerX" constant="-2" id="OY2-t4-riG"/>
                             <constraint firstItem="hEj-m8-TwT" firstAttribute="trailing" secondItem="5Hv-yh-UN9" secondAttribute="trailing" constant="20" id="QiY-sI-W2n"/>
                             <constraint firstItem="hEj-m8-TwT" firstAttribute="trailing" secondItem="CTE-ea-Kdf" secondAttribute="trailing" priority="999" constant="36" id="TAw-PR-EPl"/>
-                            <constraint firstItem="KjN-pN-mM1" firstAttribute="top" secondItem="rC6-R7-h5P" secondAttribute="top" constant="-197" id="UeW-ac-zyA"/>
                             <constraint firstItem="rC6-R7-h5P" firstAttribute="top" secondItem="CTE-ea-Kdf" secondAttribute="bottom" constant="61" id="Ygh-bQ-ir7"/>
                             <constraint firstItem="5Hv-yh-UN9" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="20" id="bLT-ia-mfx"/>
+                            <constraint firstItem="CTE-ea-Kdf" firstAttribute="top" secondItem="5Hv-yh-UN9" secondAttribute="bottom" constant="70.333333333333343" id="eEc-1c-vrN"/>
+                            <constraint firstItem="KjN-pN-mM1" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="55" id="iLu-19-RS2"/>
                             <constraint firstItem="CTE-ea-Kdf" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="36" id="nMw-bb-WuG"/>
-                            <constraint firstItem="rC6-R7-h5P" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="16" id="qOC-r1-8Vr"/>
-                            <constraint firstItem="KjN-pN-mM1" firstAttribute="leading" secondItem="rC6-R7-h5P" secondAttribute="trailing" constant="-71" id="qjE-8m-dye"/>
-                            <constraint firstItem="CTE-ea-Kdf" firstAttribute="top" secondItem="KjN-pN-mM1" secondAttribute="bottom" constant="24" id="zGL-7J-54q"/>
+                            <constraint firstItem="rC6-R7-h5P" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="40" id="qOC-r1-8Vr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hEj-m8-TwT"/>
                     </view>
@@ -162,7 +165,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keepmate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtG-cY-Zch">
                                 <rect key="frame" x="20" y="85" width="374" height="45.666666666666657"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-Bu-JOM">
@@ -177,12 +180,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3B-AG-5Ql" userLabel="Register">
-                                <rect key="frame" x="20" y="345.33333333333331" width="378" height="52"/>
-                                <color key="backgroundColor" red="1" green="0.62745098039215685" blue="0.14797424510000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="28"/>
+                                <rect key="frame" x="40" y="345.33333333333331" width="338" height="48"/>
+                                <color key="backgroundColor" red="0.37254901960784315" green="0.76862745098039209" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.93333333330000001" green="0.81176470590000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="注册">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -201,33 +204,33 @@
                                         <rect key="frame" x="0.0" y="0.0" width="342" height="124"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-VM-fMv">
-                                                <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="124"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cg-Lg-mYr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="78.666666666666671" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电子邮箱" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cg-Lg-mYr">
+                                                        <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="34"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Username" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-Gk-H41">
-                                                        <rect key="frame" x="0.0" y="35" width="78.666666666666671" height="54"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="用户名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-Gk-H41">
+                                                        <rect key="frame" x="0.0" y="35" width="69.333333333333329" height="54"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-w9-AAH">
-                                                        <rect key="frame" x="0.0" y="90" width="78.666666666666671" height="34"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-w9-AAH">
+                                                        <rect key="frame" x="0.0" y="90" width="69.333333333333329" height="34"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-2Z-Xa7">
-                                                <rect key="frame" x="96.666666666666643" y="0.0" width="245.33333333333337" height="124"/>
+                                                <rect key="frame" x="87.333333333333329" y="0.0" width="254.66666666666669" height="124"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-vp-9pa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="245.33333333333334" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入电子邮箱" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wup-vp-9pa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="254.66666666666666" height="34"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -236,8 +239,8 @@
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="7Xt-xO-yRU"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yit-Sa-IdL">
-                                                        <rect key="frame" x="0.0" y="45" width="245.33333333333334" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yit-Sa-IdL">
+                                                        <rect key="frame" x="0.0" y="45" width="254.66666666666666" height="34"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -246,8 +249,8 @@
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="IUa-iC-dSi"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIX-gJ-qYq">
-                                                        <rect key="frame" x="0.0" y="90" width="245.33333333333334" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lIX-gJ-qYq">
+                                                        <rect key="frame" x="0.0" y="90" width="254.66666666666666" height="34"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -271,13 +274,13 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="J3B-AG-5Ql" firstAttribute="centerX" secondItem="mtG-cY-Zch" secondAttribute="centerX" constant="2" id="59H-VS-m5Q"/>
                             <constraint firstItem="gHL-yz-rHx" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="36" id="6cC-oL-EXt"/>
                             <constraint firstItem="mtG-cY-Zch" firstAttribute="top" secondItem="hyX-Bu-JOM" secondAttribute="bottom" constant="-13" id="Dmg-H2-iP0"/>
                             <constraint firstItem="mtG-cY-Zch" firstAttribute="top" secondItem="raK-sC-i40" secondAttribute="top" constant="41" id="Dmu-AD-TMP"/>
-                            <constraint firstItem="J3B-AG-5Ql" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="20" id="HXL-PW-tNE"/>
+                            <constraint firstItem="J3B-AG-5Ql" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="40" id="HXL-PW-tNE"/>
                             <constraint firstItem="hyX-Bu-JOM" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="8" id="Jnr-u1-G0b"/>
                             <constraint firstItem="mtG-cY-Zch" firstAttribute="leading" secondItem="raK-sC-i40" secondAttribute="leading" constant="20" id="LcW-GI-bYk"/>
                             <constraint firstItem="raK-sC-i40" firstAttribute="trailing" secondItem="gHL-yz-rHx" secondAttribute="trailing" priority="999" constant="36" id="X9f-Ce-BF4"/>

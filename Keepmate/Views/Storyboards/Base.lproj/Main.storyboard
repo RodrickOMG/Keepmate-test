@@ -28,11 +28,11 @@
             </objects>
             <point key="canvasLocation" x="1030" y="-740"/>
         </scene>
-        <!--Library-->
+        <!--运动-->
         <scene sceneID="30w-zm-gWm">
             <objects>
                 <navigationController id="Kuq-dR-Yvo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Library" image="basketball_72px_1229297_easyicon.net" id="pmN-kS-AnF"/>
+                    <tabBarItem key="tabBarItem" title="运动" image="basketball_72px_1229297_easyicon.net" id="pmN-kS-AnF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zuq-pB-usX">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="2159" y="-754"/>
         </scene>
-        <!--Library-->
+        <!--运动-->
         <scene sceneID="RhU-XK-n4T">
             <objects>
                 <viewController storyboardIdentifier="library" id="53H-QN-Eoj" customClass="LibraryViewController" customModule="Keepmate" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,17 +55,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KRd-eV-OfL"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Library" id="41g-dI-ucA"/>
+                    <navigationItem key="navigationItem" title="运动" id="41g-dI-ucA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3aN-ZH-jDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3113" y="-754"/>
         </scene>
-        <!--Profile-->
+        <!--我-->
         <scene sceneID="dNt-QO-a53">
             <objects>
                 <navigationController id="4bG-DQ-WHu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="user_49.288590604027px_1229419_easyicon.net" id="uH5-7V-mIT"/>
+                    <tabBarItem key="tabBarItem" title="我" image="user_49.288590604027px_1229419_easyicon.net" id="uH5-7V-mIT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wqr-Gf-QOa">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="2153" y="-1477"/>
         </scene>
-        <!--Profile-->
+        <!--个人中心-->
         <scene sceneID="dhr-ha-b0F">
             <objects>
                 <viewController id="Pcs-YM-CLK" customClass="ProfileViewController" customModule="Keepmate" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,7 +88,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="BEy-ib-35A"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="K2d-Vt-5TC">
+                    <navigationItem key="navigationItem" title="个人中心" id="K2d-Vt-5TC">
                         <barButtonItem key="rightBarButtonItem" image="gear" catalog="system" id="AUF-jg-Zej">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -101,7 +101,7 @@
             </objects>
             <point key="canvasLocation" x="3112.8000000000002" y="-1477.0935960591135"/>
         </scene>
-        <!--Settings-->
+        <!--设置-->
         <scene sceneID="L4H-Qs-mW4">
             <objects>
                 <tableViewController id="0F4-CT-VQG" customClass="SettingsTableViewController" customModule="Keepmate" customModuleProvider="target" sceneMemberID="viewController">
@@ -132,17 +132,17 @@
                             <outlet property="delegate" destination="0F4-CT-VQG" id="WdA-1Y-v2h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="nAm-Cn-LJO"/>
+                    <navigationItem key="navigationItem" title="设置" id="nAm-Cn-LJO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBT-lD-rIi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3916" y="-1477.0935960591135"/>
         </scene>
-        <!--Favorite-->
+        <!--探索-->
         <scene sceneID="ozz-ii-nkf">
             <objects>
                 <navigationController id="n8n-Pc-QTI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="screen_76.340425531915px_1229380_easyicon.net" id="cUo-s7-eui"/>
+                    <tabBarItem key="tabBarItem" title="探索" image="screen_76.340425531915px_1229380_easyicon.net" id="cUo-s7-eui"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VNk-dH-Q58">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -155,7 +155,7 @@
             </objects>
             <point key="canvasLocation" x="2153" y="-11"/>
         </scene>
-        <!--Favorite-->
+        <!--探索-->
         <scene sceneID="Gc6-Cb-udk">
             <objects>
                 <viewController storyboardIdentifier="Favorite" id="9Nz-1B-eoj" sceneMemberID="viewController">
@@ -165,7 +165,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XFY-La-o0A"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Favorite" id="ofu-h6-ceE"/>
+                    <navigationItem key="navigationItem" title="探索" id="ofu-h6-ceE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Auz-Qk-mY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

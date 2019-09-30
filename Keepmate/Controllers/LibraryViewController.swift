@@ -27,7 +27,7 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         cell.layer.masksToBounds = true
         
         let btn = UIButton()
-        btn.frame = CGRect(x: 0, y: 0, width: 150, height: 150)
+        btn.frame = CGRect(x: 0, y: 0, width: 160, height: 160)
         btn.backgroundColor = UIColor.gray
         
         switch tagOfButtons {
@@ -81,16 +81,16 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         scroll.delegate = self
         
         scroll.addSubview(theDayWorkoutLabel)
-        theDayWorkoutLabel.anchor(top: scroll.topAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 20, width: screenWidth, height: 30)
+        theDayWorkoutLabel.anchor(top: scroll.topAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 30, width: screenWidth, height: 30)
         
         scroll.addSubview(theDayWorkoutButton)
-        theDayWorkoutButton.anchor(top: theDayWorkoutLabel.bottomAnchor, left: scroll.leftAnchor, right: scroll.rightAnchor, paddingTop: 5, paddingLeft: 20, paddingRight: 20, width: 335, height: 220)
+        theDayWorkoutButton.anchor(top: theDayWorkoutLabel.bottomAnchor, left: scroll.leftAnchor, right: scroll.rightAnchor, paddingTop: 5, paddingLeft: 30, paddingRight: 30, width: screenWidth - 60, height: 220)
         
         scroll.addSubview(workoutLibraryLabel)
-        workoutLibraryLabel.anchor(top: theDayWorkoutButton.bottomAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 20, width: screenWidth, height: 30)
+        workoutLibraryLabel.anchor(top: theDayWorkoutButton.bottomAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 30, width: screenWidth, height: 30)
         
         scroll.addSubview(collectionView)
-        collectionView.anchor(top: workoutLibraryLabel.bottomAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 20, paddingRight: 20, width: 335, height: CGFloat(175 * numberOfItems / 2))
+        collectionView.anchor(top: workoutLibraryLabel.bottomAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 30, paddingRight: 30, width: screenWidth - 60, height: CGFloat(175 * numberOfItems / 2))
         
         return scroll
     }()
@@ -130,7 +130,7 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.itemSize = CGSize(width: 160, height: 160)
         layout.minimumLineSpacing = 25
         
         let view = UICollectionView(frame: CGRect(x: 0, y: 0, width: screenWidth - 40, height: 800), collectionViewLayout: layout)
