@@ -81,7 +81,7 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
         scroll.delegate = self
         
         scroll.addSubview(theDayWorkoutLabel)
-        theDayWorkoutLabel.anchor(top: scroll.topAnchor, left: scroll.leftAnchor, paddingTop: 5, paddingLeft: 30, width: screenWidth, height: 30)
+        theDayWorkoutLabel.anchor(top: scroll.topAnchor, left: scroll.leftAnchor, paddingTop: 20, paddingLeft: 30, width: screenWidth, height: 30)
         
         scroll.addSubview(theDayWorkoutButton)
         theDayWorkoutButton.anchor(top: theDayWorkoutLabel.bottomAnchor, left: scroll.leftAnchor, right: scroll.rightAnchor, paddingTop: 5, paddingLeft: 30, paddingRight: 30, width: screenWidth - 60, height: 220)

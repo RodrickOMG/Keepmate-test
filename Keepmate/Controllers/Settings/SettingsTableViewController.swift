@@ -10,13 +10,15 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
-    let firstArray = ["账号管理", "账号与安全"]
+    let firstArray = ["帐号设置", "帐号与安全"]
     let secondArray = ["推送通知设置", "隐私设置", "通用设置"]
     let thirdArray = ["客服中心", "关于Keepmate"]
     let logOutArray = ["退出登录"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .settingsBkgColor
+        
+        
+        view.backgroundColor = .systemGroupedBackground
         tableView.delegate = self
         //上下没有效果
         //tableView.separatorInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0
@@ -38,10 +40,13 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserOperationItemCell", for: indexPath)
         if indexPath.section == 0{
+            cell.accessoryType = .disclosureIndicator
             cell.textLabel?.text = firstArray[indexPath.row]
         } else if indexPath.section == 1 {
+            cell.accessoryType = .disclosureIndicator
             cell.textLabel?.text = secondArray[indexPath.row]
         } else if indexPath.section == 2{
+            cell.accessoryType = .disclosureIndicator
             cell.textLabel?.text = thirdArray[indexPath.row]
         } else {
             cell.textLabel?.text = logOutArray[indexPath.row]
@@ -56,21 +61,21 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         var rows = 0
-        if section == 0{
+        if section == 0 {
             rows = firstArray.count
         } else if section == 1 {
             rows = secondArray.count
-        } else if section == 2{
+        } else if section == 2 {
             rows = thirdArray.count
         } else {
             rows = logOutArray.count
         }
         return rows
-    }
+    }                                                                                                                                                                                                              
     
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        // UIView with darkGray background for section-separators as Section Footer
+        // UIView with darkGray background for section-separators as Section Header
         let v = UIView(frame: CGRect(x: 0, y:0, width: tableView.frame.width, height: 35))
         v.backgroundColor = .settingsBkgColor
         return v
@@ -79,27 +84,33 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        if (logOutArray[indexPath.row] == "退出登录") {
-
-            let alert = UIAlertController(title: "", message: "退出后不会删除任何历史数据，下次登录依然可以使用本帐号", preferredStyle: .actionSheet)
-            let logOutAction = UIAlertAction(title: "退出登录", style: UIAlertAction.Style.destructive, handler:  { (action) in
-                print("Log Out")
-                BmobUser.logout()
-                let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
-                let vc = sb.instantiateViewController(withIdentifier: "Login")
+        if indexPath.section == 0{
+            if firstArray[indexPath.row] == "帐号设置" {
+                let sb = UIStoryboard(name:"Settings",bundle: Bundle.main)
+                let vc = sb.instantiateViewController(withIdentifier: "AccountSettings")
                 vc.modalPresentationStyle = .fullScreen
-                self.present(vc, animated: true, completion: nil)
-            })
-
-            let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-
-            alert.addAction(logOutAction)
-            alert.addAction(cancelAction)
-            
-            present(alert, animated: true, completion: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+                //self.present(vc, animated: false, completion: nil)
             }
+        }
+        else if indexPath.section == 3{
+            let alert = UIAlertController(title: "", message: "退出后不会删除任何历史数据，下次登录依然可以使用本帐号", preferredStyle: .actionSheet)
+                let logOutAction = UIAlertAction(title: "退出登录", style: UIAlertAction.Style.destructive, handler:  { (action) in
+                    print("Log Out")
+                    BmobUser.logout()
+                    let sb = UIStoryboard(name:"LoginAndRegister",bundle: Bundle.main)
+                    let vc = sb.instantiateViewController(withIdentifier: "Login")
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                })
 
+                let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+
+                alert.addAction(logOutAction)
+                alert.addAction(cancelAction)
+                
+                present(alert, animated: true, completion: nil)
+            }
         }
 
 

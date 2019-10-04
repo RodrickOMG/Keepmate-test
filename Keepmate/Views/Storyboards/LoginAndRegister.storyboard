@@ -100,7 +100,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjN-pN-mM1">
-                                <rect key="frame" x="55" y="408" width="82" height="32"/>
+                                <rect key="frame" x="56" y="432" width="82" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="新用户注册">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-bf-ZyA">
-                                <rect key="frame" x="289" y="409" width="70" height="30"/>
+                                <rect key="frame" x="287" y="433" width="70" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="忘记密码?">
                                     <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,8 +125,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hEj-m8-TwT" firstAttribute="trailing" secondItem="q0a-bf-ZyA" secondAttribute="trailing" constant="55" id="4Iy-bA-wc2"/>
-                            <constraint firstItem="q0a-bf-ZyA" firstAttribute="top" secondItem="rC6-R7-h5P" secondAttribute="bottom" constant="17" id="97e-iA-NNT"/>
+                            <constraint firstItem="hEj-m8-TwT" firstAttribute="trailing" secondItem="q0a-bf-ZyA" secondAttribute="trailing" constant="57" id="4Iy-bA-wc2"/>
+                            <constraint firstItem="q0a-bf-ZyA" firstAttribute="top" secondItem="rC6-R7-h5P" secondAttribute="bottom" constant="41" id="97e-iA-NNT"/>
                             <constraint firstItem="5Hv-yh-UN9" firstAttribute="top" secondItem="hEj-m8-TwT" secondAttribute="top" constant="41" id="Fch-O3-UTo"/>
                             <constraint firstItem="KjN-pN-mM1" firstAttribute="centerY" secondItem="q0a-bf-ZyA" secondAttribute="centerY" id="Gb5-u5-e9G"/>
                             <constraint firstItem="rC6-R7-h5P" firstAttribute="centerX" secondItem="5Hv-yh-UN9" secondAttribute="centerX" constant="-2" id="OY2-t4-riG"/>
@@ -135,7 +135,7 @@
                             <constraint firstItem="rC6-R7-h5P" firstAttribute="top" secondItem="CTE-ea-Kdf" secondAttribute="bottom" constant="61" id="Ygh-bQ-ir7"/>
                             <constraint firstItem="5Hv-yh-UN9" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="20" id="bLT-ia-mfx"/>
                             <constraint firstItem="CTE-ea-Kdf" firstAttribute="top" secondItem="5Hv-yh-UN9" secondAttribute="bottom" constant="70.333333333333343" id="eEc-1c-vrN"/>
-                            <constraint firstItem="KjN-pN-mM1" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="55" id="iLu-19-RS2"/>
+                            <constraint firstItem="KjN-pN-mM1" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="56" id="iLu-19-RS2"/>
                             <constraint firstItem="CTE-ea-Kdf" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="36" id="nMw-bb-WuG"/>
                             <constraint firstItem="rC6-R7-h5P" firstAttribute="leading" secondItem="hEj-m8-TwT" secondAttribute="leading" constant="40" id="qOC-r1-8Vr"/>
                         </constraints>
@@ -212,7 +212,7 @@
                                                         <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="用户名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-Gk-H41">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="昵称" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcX-Gk-H41">
                                                         <rect key="frame" x="0.0" y="35" width="69.333333333333329" height="54"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" red="0.2274509804" green="0.28235294119999998" blue="0.52941176469999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -239,7 +239,7 @@
                                                             <outlet property="delegate" destination="plr-Ik-q6D" id="7Xt-xO-yRU"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yit-Sa-IdL">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="设置昵称" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yit-Sa-IdL">
                                                         <rect key="frame" x="0.0" y="45" width="254.66666666666666" height="34"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

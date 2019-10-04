@@ -54,9 +54,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         err.backgroundColor = .systemGroupedBackground
         err.layer.cornerRadius = 5
         err.clipsToBounds = true
-        err.font = UIFont(name: "Roboto", size: 11.0)
+        err.font = .systemFont(ofSize: 14)
         err.numberOfLines = 2
-        err.adjustsFontSizeToFitWidth = true
+        err.adjustsFontSizeToFitWidth = false
         err.alpha = 0
         return err
     }()
@@ -68,9 +68,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         err.backgroundColor = .systemGroupedBackground
         err.layer.cornerRadius = 5
         err.clipsToBounds = true
-        err.font = UIFont(name: "Roboto", size: 11.0)
+        err.font = .systemFont(ofSize: 14)
         err.numberOfLines = 2
-        err.adjustsFontSizeToFitWidth = true
+        err.adjustsFontSizeToFitWidth = false
         err.alpha = 0
         return err
     }()
@@ -149,7 +149,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         if passwordTextfield.text!.count > 0 {
             if Utilities.isPasswordValid(passwordTextfield.text!) == false {
                 //Password isn't secure enough
-                let err = "Password must be at least 8 characters, and contain at least one upper case letter, one lower case letter, and one number."
+                let err = "密码需要至少8个字符，并且包含大小写字母和数字"
                 showLabel(err, errorLabel)
                 passwordIsValid = false
             } else {
@@ -166,7 +166,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             print(Utilities.isUsernameValid(usernametextfield.text!))
             if Utilities.isUsernameValid(usernametextfield.text!) == false {
                 //username is illegal
-                let err = "Username must be at least 4 characters and most 14 characters. It couldn't contain any special character and whitespace"
+                let err = "用户名需要4-14个字符，支持中英文、数字，不允许包含特殊字符和空格"
                 showLabel(err, usernameErrorLabel)
                 usernameIsValid = false
             } else {

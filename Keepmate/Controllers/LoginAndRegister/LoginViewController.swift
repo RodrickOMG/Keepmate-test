@@ -83,6 +83,7 @@ class LoginViewController: UIViewController {
         errorLabel.anchor(top: signInInput.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 12, paddingLeft: 32, paddingRight: 32, width: 200, height: 40)
     }
     
+    
     func judgeValidity() {
         if emailIsValid && passwordIsValid {
             loginButton.isEnabled = true
