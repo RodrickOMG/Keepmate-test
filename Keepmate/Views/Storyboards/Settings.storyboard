@@ -111,12 +111,30 @@
                                             <constraint firstItem="2jx-Vh-CXL" firstAttribute="top" secondItem="ctl-Jf-uYn" secondAttribute="top" id="w2j-tU-wgY"/>
                                         </constraints>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LH4-Cl-w3w">
+                                        <rect key="frame" x="0.0" y="174" width="414" height="282"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="updateProfileInfoCell" id="JMb-cQ-cI4" customClass="UpdateProfileInfoTableViewCell" customModule="Keepmate" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JMb-cQ-cI4" id="3Y5-4B-FfD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
                                 </subviews>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="LH4-Cl-w3w" firstAttribute="top" secondItem="ctl-Jf-uYn" secondAttribute="bottom" constant="16" id="4Nd-4v-Hea"/>
                                     <constraint firstItem="ctl-Jf-uYn" firstAttribute="top" secondItem="feE-oL-scK" secondAttribute="top" constant="30" id="985-LC-rWx"/>
                                     <constraint firstAttribute="trailing" secondItem="ctl-Jf-uYn" secondAttribute="trailing" constant="143" id="Qs1-wk-oTw"/>
+                                    <constraint firstAttribute="bottom" secondItem="LH4-Cl-w3w" secondAttribute="bottom" constant="279" id="RX0-vQ-aYO"/>
+                                    <constraint firstAttribute="trailing" secondItem="LH4-Cl-w3w" secondAttribute="trailing" id="bBs-uW-fZM"/>
                                     <constraint firstAttribute="bottom" secondItem="ctl-Jf-uYn" secondAttribute="bottom" constant="577" id="mTd-yu-gkO"/>
+                                    <constraint firstItem="LH4-Cl-w3w" firstAttribute="leading" secondItem="feE-oL-scK" secondAttribute="leading" id="mje-6l-IEW"/>
                                     <constraint firstItem="ctl-Jf-uYn" firstAttribute="leading" secondItem="feE-oL-scK" secondAttribute="leading" constant="143" id="vhN-Yy-iyw"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="lfi-XV-tGD"/>
@@ -143,6 +161,7 @@
                         <outlet property="changeProfilePic" destination="ctl-Jf-uYn" id="Af6-rh-Fqt"/>
                         <outlet property="done" destination="9gM-eA-OkV" id="5F7-jT-r5z"/>
                         <outlet property="profilePic" destination="2jx-Vh-CXL" id="0fX-R2-XbM"/>
+                        <outlet property="updateProfileInfo" destination="LH4-Cl-w3w" id="TVh-f3-4pS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpx-Wo-UbD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

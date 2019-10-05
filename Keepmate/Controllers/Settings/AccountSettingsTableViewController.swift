@@ -53,9 +53,10 @@ class AccountSettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "AccountSettingsItemCell", for: indexPath)
-        cell = UITableViewCell.init(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "AccountSettingsItemCell")
+        let cell: UITableViewCell = .init(style: .value1, reuseIdentifier: "AccountSettingsItemCell")
+        
         let user = BmobUser.current()
+        
         if indexPath.section == 0{
             cell.textLabel?.text = firstArray[indexPath.row]
             if firstArray[indexPath.row] == "电子邮箱" {
