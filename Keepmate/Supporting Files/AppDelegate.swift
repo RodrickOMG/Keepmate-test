@@ -17,9 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
         
         Bmob.register(withAppKey: "01ede73d2d741f7f6a27ae3cfe18bb93")
-        
+        Bmob.resetDomain("files.keepmate.cn")
         
         Thread .sleep(forTimeInterval: 1)
         // 检测用户是不是第一次启动
@@ -81,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func walkthroughPageDidChange(_ pageNumber: Int) {
         print("Current Page \(pageNumber)")
     }
+    
 
 }
 

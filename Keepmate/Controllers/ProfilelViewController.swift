@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, BmobEventDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -249,84 +249,27 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         print("filePath:" + filePath)
         
         let user = BmobUser.current()
-        let file = BmobFile(filePath: filePath)
-
-        file!.saveInBackground(byDataSharding: { (isSuccessful, error) in
+        let file = BmobFile.init(filePath: filePath)
+        
+        file?.save(inBackground: { [weak file] (isSuccessful, error) in
             if isSuccessful {
                 let weakFile = file
+                print("Successfully upload file")
                 user!.setObject(weakFile, forKey: "profilePic")
                 user!.setObject("helloworld", forKey: "profilePicName")
-                user!.updateInBackground(resultBlock: {(isSuccessful, error) in
-                    if isSuccessful {
-                        print("Successfully upload profile picture")
-                    } else {
-                        print(error!.localizedDescription)
+                user!.updateInBackground { (isSuccessful, error) in
+                    if error != nil {
+                        print("save ", error as Any)
                     }
-                })
+                }
+            } else {
+                print("upload ", error as Any)
             }
+        }, withProgressBlock: { (process) in
+            print("process:  ", process)
         })
         
-        
     }
-//    func uploadProfilePic() {
-//        guard let image = self.profilePicButton.imageView?.image else { return }
-//        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
-//
-//        let filename = NSUUID().uuidString
-//
-//        let storageRef = Storage.storage().reference().child("profile_image").child(filename)
-//
-//        storageRef.putData(uploadData, metadata: nil, completion: { (metadata, err) in
-//
-//            if let err = err {
-//                print("Failed to upload profile image: ", err)
-//                return
-//            }
-//
-//            storageRef.downloadURL(completion: { (downloadURL, err) in
-//
-//                guard let profileImageURL = downloadURL?.absoluteString else { return }
-//                print("Successfully upload profile image: ", profileImageURL)
-//
-////                guard let uid = user?.user.uid else { return }
-////                let dictionaryValues = ["username": username, "profileImageURL": profileImageURL]
-////                let values = [uid: dictionaryValues]
-//
-//                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
-//
-//                    if let err = err {
-//                        print("Failed to save user info into db: ", err)
-//                        return
-//                    }
-//
-//                    print("Successfully saved user info to db")
-//                })
-//
-//
-//            })
-//        })
-//
-        
-//        //Home目录
-//        let homeDirectory = NSHomeDirectory()
-//        let documentPath = homeDirectory + "/Documents"
-//        //文件管理器
-//        let fileManager: FileManager = FileManager.default
-//        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
-//        do {
-//            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
-//        }
-//        catch let error {
-//
-//        }
-//        fileManager.createFile(atPath: documentPath.appendingFormat("/image.png"), contents: uploadData, attributes: nil)
-//        //得到选择后沙盒中图片的完整路径
-//        let filePath: String = String(format: "%@%@", documentPath, "/image.png")
-//        print("filePath:" + filePath)
-        
-      
-//    }
     
     
 }
-

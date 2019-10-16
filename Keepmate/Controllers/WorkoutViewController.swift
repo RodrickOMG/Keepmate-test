@@ -24,6 +24,7 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
     
     var playFlag = 0
     let playerVC = AVPlayerViewController()
+    let captureSession = AVCaptureSession()
     
     var tag:String?
     
@@ -69,7 +70,6 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
     }
     
     func setupPoseEstimation() {
-        let captureSession = AVCaptureSession()
         captureSession.sessionPreset = .photo
         
         guard let captureDevice = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) else { return }
@@ -150,6 +150,7 @@ class WorkoutViewController: UIViewController, AVCaptureVideoDataOutputSampleBuf
     
     @objc func backToLibrary(btn:UIButton) {
         self.playerVC.player!.pause()
+        self.captureSession.stopRunning()
         self.dismiss(animated: true, completion: nil)
     }
     

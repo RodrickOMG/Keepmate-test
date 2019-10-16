@@ -148,10 +148,55 @@ class UpdateProfileInfoViewController: UIViewController, UIScrollViewDelegate, U
             profilePic.contentMode = .scaleAspectFill
 //            profilePic.setImage(editImage, for: .normal)
         }
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: self.uploadProfilePic)
     }
 
-    
+    func uploadProfilePic() {
+        
+        
+        guard let image = self.profilePic.image else { return }
+        guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
+        
+        //Home目录
+        let homeDirectory = NSHomeDirectory()
+        let documentPath = homeDirectory + "/Documents"
+        //文件管理器
+        let fileManager: FileManager = FileManager.default
+        //把刚刚图片转换的data对象拷贝至沙盒中 并保存为image.png
+        do {
+            try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
+        }
+        catch let error {
+
+        }
+        fileManager.createFile(atPath: documentPath.appendingFormat("/image.png"), contents: uploadData, attributes: nil)
+        //得到选择后沙盒中图片的完整路径
+        let filePath: String = String(format: "%@%@", documentPath, "/image.png")
+        print("filePath:" + filePath)
+        
+        let user = BmobUser.current()
+        
+        let file = BmobFile.init(filePath: filePath)
+        
+        file?.save(inBackground: { [weak file] (isSuccessful, error) in
+            if isSuccessful {
+                let weakFile = file
+                print("Successfully upload file")
+                user!.setObject(weakFile, forKey: "profilePic")
+                user!.setObject("helloworld", forKey: "profilePicName")
+                user!.updateInBackground { (isSuccessful, error) in
+                    if error != nil {
+                        print("save ", error as Any)
+                    }
+                }
+            } else {
+                print("upload ", error as Any)
+            }
+        }, withProgressBlock: { (process) in
+            print("process:  ", process)
+        })
+        
+    }
     
     /*
     // MARK: - Navigation

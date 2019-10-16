@@ -33,30 +33,6 @@
 		B82F25B8491E9A70F4EA7785 /* Pods_Keepmate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		52FA6F6E233BBE1D003AA0AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52FA6F67233BBE1D003AA0AE /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0383903D05EDD5C442C682C1F7A1752D;
-			remoteInfo = ChameleonFramework;
-		};
-		52FA6F70233BBE1D003AA0AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52FA6F67233BBE1D003AA0AE /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EBB7229949F245BBBBF057918FFA1A9F;
-			remoteInfo = "Pods-Keepmate";
-		};
-		52FA6F72233BBE1D003AA0AE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 52FA6F67233BBE1D003AA0AE /* Pods.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E97D43C46A45EE515A4DA3AF94398441;
-			remoteInfo = SVProgressHUD;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepmate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		520BCFE12346F7FA0012C8DA /* UpdateProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -82,7 +58,6 @@
 		52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		52F064DF22F911A00023266D /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		52F064E322FB00B90023266D /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
-		52FA6F67233BBE1D003AA0AE /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pods.xcodeproj; sourceTree = "<group>"; };
 		52FA8F7B232FCF010091EBD7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		52FA8F7D2330A6F70091EBD7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		52FA8F8123311ACB0091EBD7 /* Keepmate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Keepmate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -240,20 +215,9 @@
 			path = Video;
 			sourceTree = "<group>";
 		};
-		52FA6F68233BBE1D003AA0AE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52FA6F6F233BBE1D003AA0AE /* ChameleonFramework.framework */,
-				52FA6F71233BBE1D003AA0AE /* Pods_Keepmate.framework */,
-				52FA6F73233BBE1D003AA0AE /* SVProgressHUD.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A927E56BF05A991B02C5B348 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				52FA6F67233BBE1D003AA0AE /* Pods.xcodeproj */,
 				CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */,
 				EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */,
 			);
@@ -322,42 +286,12 @@
 			mainGroup = 52A6D62F22D89F1400D0670B;
 			productRefGroup = 52A6D63922D89F1400D0670B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 52FA6F68233BBE1D003AA0AE /* Products */;
-					ProjectRef = 52FA6F67233BBE1D003AA0AE /* Pods.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				52A6D63722D89F1400D0670B /* Keepmate */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		52FA6F6F233BBE1D003AA0AE /* ChameleonFramework.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ChameleonFramework.framework;
-			remoteRef = 52FA6F6E233BBE1D003AA0AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		52FA6F71233BBE1D003AA0AE /* Pods_Keepmate.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Pods_Keepmate.framework;
-			remoteRef = 52FA6F70233BBE1D003AA0AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		52FA6F73233BBE1D003AA0AE /* SVProgressHUD.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SVProgressHUD.framework;
-			remoteRef = 52FA6F72233BBE1D003AA0AE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		52A6D63622D89F1400D0670B /* Resources */ = {
@@ -590,6 +524,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YZCDVJBQY3;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Keepmate/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -615,6 +553,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YZCDVJBQY3;
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Keepmate/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
