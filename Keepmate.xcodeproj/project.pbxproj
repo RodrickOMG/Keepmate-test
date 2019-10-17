@@ -30,6 +30,18 @@
 		52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064E322FB00B90023266D /* WorkoutViewController.swift */; };
 		52FA8F7C232FCF010091EBD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8F7B232FCF010091EBD7 /* Extension.swift */; };
 		52FA8F7E2330A6F70091EBD7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8F7D2330A6F70091EBD7 /* Utilities.swift */; };
+		52FE03812358270400F6F7AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE03802358270400F6F7AD /* CoreLocation.framework */; };
+		52FE03832358273000F6F7AD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE03822358273000F6F7AD /* Security.framework */; };
+		52FE03852358274800F6F7AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE03842358274800F6F7AD /* CoreGraphics.framework */; };
+		52FE03872358275300F6F7AD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE03862358275300F6F7AD /* MobileCoreServices.framework */; };
+		52FE03892358275B00F6F7AD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE03882358275B00F6F7AD /* CFNetwork.framework */; };
+		52FE038B2358276400F6F7AD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE038A2358276400F6F7AD /* CoreTelephony.framework */; };
+		52FE038D2358276E00F6F7AD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE038C2358276E00F6F7AD /* SystemConfiguration.framework */; };
+		52FE038F235827BF00F6F7AD /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE038E235827BF00F6F7AD /* libz.1.2.5.tbd */; };
+		52FE0391235827CA00F6F7AD /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE0390235827CA00F6F7AD /* libicucore.tbd */; };
+		52FE0393235827D500F6F7AD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE0392235827D500F6F7AD /* libsqlite3.tbd */; };
+		52FE0395235827DE00F6F7AD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE0394235827DE00F6F7AD /* libc++.tbd */; };
+		52FE0397235827E700F6F7AD /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE0396235827E700F6F7AD /* Photos.framework */; };
 		B82F25B8491E9A70F4EA7785 /* Pods_Keepmate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +73,18 @@
 		52FA8F7B232FCF010091EBD7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		52FA8F7D2330A6F70091EBD7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		52FA8F8123311ACB0091EBD7 /* Keepmate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Keepmate-Bridging-Header.h"; sourceTree = "<group>"; };
+		52FE03802358270400F6F7AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		52FE03822358273000F6F7AD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		52FE03842358274800F6F7AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		52FE03862358275300F6F7AD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		52FE03882358275B00F6F7AD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		52FE038A2358276400F6F7AD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		52FE038C2358276E00F6F7AD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		52FE038E235827BF00F6F7AD /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		52FE0390235827CA00F6F7AD /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		52FE0392235827D500F6F7AD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		52FE0394235827DE00F6F7AD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		52FE0396235827E700F6F7AD /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		CB56367AE35122E8D8C0B294 /* Pods-Keepmate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepmate.debug.xcconfig"; path = "Target Support Files/Pods-Keepmate/Pods-Keepmate.debug.xcconfig"; sourceTree = "<group>"; };
 		EBF4D911ABAE63A4CC6B7BB3 /* Pods-Keepmate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Keepmate.release.xcconfig"; path = "Target Support Files/Pods-Keepmate/Pods-Keepmate.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +94,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52FE0397235827E700F6F7AD /* Photos.framework in Frameworks */,
+				52FE0395235827DE00F6F7AD /* libc++.tbd in Frameworks */,
+				52FE0393235827D500F6F7AD /* libsqlite3.tbd in Frameworks */,
+				52FE0391235827CA00F6F7AD /* libicucore.tbd in Frameworks */,
+				52FE038F235827BF00F6F7AD /* libz.1.2.5.tbd in Frameworks */,
+				52FE038D2358276E00F6F7AD /* SystemConfiguration.framework in Frameworks */,
+				52FE038B2358276400F6F7AD /* CoreTelephony.framework in Frameworks */,
+				52FE03892358275B00F6F7AD /* CFNetwork.framework in Frameworks */,
+				52FE03872358275300F6F7AD /* MobileCoreServices.framework in Frameworks */,
+				52FE03852358274800F6F7AD /* CoreGraphics.framework in Frameworks */,
+				52FE03832358273000F6F7AD /* Security.framework in Frameworks */,
+				52FE03812358270400F6F7AD /* CoreLocation.framework in Frameworks */,
 				B82F25B8491E9A70F4EA7785 /* Pods_Keepmate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +263,18 @@
 		C4AC3EEB2C88F108044FC38F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52FE0396235827E700F6F7AD /* Photos.framework */,
+				52FE0394235827DE00F6F7AD /* libc++.tbd */,
+				52FE0392235827D500F6F7AD /* libsqlite3.tbd */,
+				52FE0390235827CA00F6F7AD /* libicucore.tbd */,
+				52FE038E235827BF00F6F7AD /* libz.1.2.5.tbd */,
+				52FE038C2358276E00F6F7AD /* SystemConfiguration.framework */,
+				52FE038A2358276400F6F7AD /* CoreTelephony.framework */,
+				52FE03882358275B00F6F7AD /* CFNetwork.framework */,
+				52FE03862358275300F6F7AD /* MobileCoreServices.framework */,
+				52FE03842358274800F6F7AD /* CoreGraphics.framework */,
+				52FE03822358273000F6F7AD /* Security.framework */,
+				52FE03802358270400F6F7AD /* CoreLocation.framework */,
 				28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */,
 			);
 			name = Frameworks;

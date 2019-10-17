@@ -251,6 +251,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         let user = BmobUser.current()
         let file = BmobFile.init(filePath: filePath)
         
+        
         file?.save(inBackground: { [weak file] (isSuccessful, error) in
             if isSuccessful {
                 let weakFile = file
@@ -270,6 +271,5 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         })
         
     }
-    
-    
+
 }

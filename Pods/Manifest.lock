@@ -1,0 +1,26 @@
+PODS:
+  - BmobSDK (2.4.1)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - BmobSDK
+  - ChameleonFramework/Swift
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - BmobSDK
+    - ChameleonFramework
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  BmobSDK: 930525437e6602f7146108e11a9796604a1edbb9
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: c1c03011b9fe541baa40c2532a58349b8a7d1159
+
+COCOAPODS: 1.8.4
