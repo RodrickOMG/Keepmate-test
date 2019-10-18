@@ -35,6 +35,13 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         print(user!.username ?? "Not Logged In")
         nameLabel.text = user!.username ?? "Not Logged In"
         emailLabel.text = user!.email ?? ""
+        if user!.object(forKey: "profilePicName") != nil {
+            let profilePicFile = user?.object(forKey: "profilePic") as? BmobFile
+            print(profilePicFile!.url)
+            guard let url = URL(string: profilePicFile!.url!) else { return }
+            let data = try?Data(contentsOf: url)
+            profilePicButton.setImage(UIImage(data: data!), for: .normal)
+        }
     }
     
 
@@ -248,27 +255,8 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         let filePath: String = String(format: "%@%@", documentPath, "/image.png")
         print("filePath:" + filePath)
         
-        let user = BmobUser.current()
-        let file = BmobFile.init(filePath: filePath)
+        UserInfo.saveProfilePic(filePath)
         
-        
-        file?.save(inBackground: { [weak file] (isSuccessful, error) in
-            if isSuccessful {
-                let weakFile = file
-                print("Successfully upload file")
-                user!.setObject(weakFile, forKey: "profilePic")
-                user!.setObject("helloworld", forKey: "profilePicName")
-                user!.updateInBackground { (isSuccessful, error) in
-                    if error != nil {
-                        print("save ", error as Any)
-                    }
-                }
-            } else {
-                print("upload ", error as Any)
-            }
-        }, withProgressBlock: { (process) in
-            print("process:  ", process)
-        })
         
     }
 

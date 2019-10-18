@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		520BCFE22346F7FA0012C8DA /* UpdateProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520BCFE12346F7FA0012C8DA /* UpdateProfileInfoTableViewCell.swift */; };
+		521DA4C923582F25009791C7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA4C823582F25009791C7 /* UserInfo.swift */; };
 		5241F935232C80C600662488 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F934232C80C600662488 /* LoginViewController.swift */; };
 		5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F942232CD84D00662488 /* SettingsTableViewController.swift */; };
+		5255032E235983BD00649381 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5255032D235983BC00649381 /* README.md */; };
 		52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */; };
 		52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52577EB6232BAF1300E18517 /* RegisterViewController.swift */; };
 		529262B9234301AF00C7E24D /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 529262B8234301AF00C7E24D /* Settings.storyboard */; };
@@ -48,8 +50,10 @@
 /* Begin PBXFileReference section */
 		28F5A560D6A5D1072EB41449 /* Pods_Keepmate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Keepmate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		520BCFE12346F7FA0012C8DA /* UpdateProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
+		521DA4C823582F25009791C7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5241F934232C80C600662488 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5241F942232CD84D00662488 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		5255032D235983BC00649381 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		52577EB6232BAF1300E18517 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		529262B8234301AF00C7E24D /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		52A6D62F22D89F1400D0670B = {
 			isa = PBXGroup;
 			children = (
+				5255032D235983BC00649381 /* README.md */,
 				52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */,
 				52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */,
 				52A6D63A22D89F1400D0670B /* Keepmate */,
@@ -202,6 +207,7 @@
 		52A6D65422D8AF3B00D0670B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				521DA4C823582F25009791C7 /* UserInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -352,6 +358,7 @@
 				52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */,
 				52A6D65A22D8B77B00D0670B /* Assets.xcassets in Resources */,
 				529262B9234301AF00C7E24D /* Settings.storyboard in Resources */,
+				5255032E235983BD00649381 /* README.md in Resources */,
 				52A6D64122D89F1400D0670B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +417,7 @@
 				520BCFE22346F7FA0012C8DA /* UpdateProfileInfoTableViewCell.swift in Sources */,
 				529262BF23433DCC00C7E24D /* UpdateProfileInfoViewController.swift in Sources */,
 				52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */,
+				521DA4C923582F25009791C7 /* UserInfo.swift in Sources */,
 				52A6D65222D8AEE700D0670B /* BWWalkthroughViewController.swift in Sources */,
 				52FA8F7C232FCF010091EBD7 /* Extension.swift in Sources */,
 				52FA8F7E2330A6F70091EBD7 /* Utilities.swift in Sources */,

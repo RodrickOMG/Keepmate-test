@@ -174,27 +174,7 @@ class UpdateProfileInfoViewController: UIViewController, UIScrollViewDelegate, U
         let filePath: String = String(format: "%@%@", documentPath, "/image.png")
         print("filePath:" + filePath)
         
-        let user = BmobUser.current()
-        
-        let file = BmobFile.init(filePath: filePath)
-        
-        file?.save(inBackground: { [weak file] (isSuccessful, error) in
-            if isSuccessful {
-                let weakFile = file
-                print("Successfully upload file")
-                user!.setObject(weakFile, forKey: "profilePic")
-                user!.setObject("helloworld", forKey: "profilePicName")
-                user!.updateInBackground { (isSuccessful, error) in
-                    if error != nil {
-                        print("save ", error as Any)
-                    }
-                }
-            } else {
-                print("upload ", error as Any)
-            }
-        }, withProgressBlock: { (process) in
-            print("process:  ", process)
-        })
+        UserInfo.saveProfilePic(filePath)
         
     }
     
