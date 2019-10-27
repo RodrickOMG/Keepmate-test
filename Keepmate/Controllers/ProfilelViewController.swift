@@ -255,7 +255,7 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
         let filePath: String = String(format: "%@%@", documentPath, "/image.png")
         print("filePath:" + filePath)
         
-        UserInfo.saveProfilePic(filePath)
+        let url = UserInfo.upload(filePath)
         
         
     }

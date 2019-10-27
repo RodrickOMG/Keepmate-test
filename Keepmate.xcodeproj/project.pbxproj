@@ -161,11 +161,10 @@
 		52A6D63A22D89F1400D0670B /* Keepmate */ = {
 			isa = PBXGroup;
 			children = (
-				52C9B62623237886005962A3 /* Supporting Files */,
 				52A6D65322D8AF1A00D0670B /* Utilities */,
+				52C9B62623237886005962A3 /* Supporting Files */,
 				52A6D65922D8B77B00D0670B /* Assets.xcassets */,
 				52A6D65522D8AF4D00D0670B /* Views */,
-				52A6D65422D8AF3B00D0670B /* Models */,
 				52EF59E622FC66E600FC8263 /* Source */,
 				52A6D64D22D8AE7B00D0670B /* Controllers */,
 			);
@@ -198,6 +197,7 @@
 		52A6D65322D8AF1A00D0670B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52A6D65422D8AF3B00D0670B /* Models */,
 				52FA8F7B232FCF010091EBD7 /* Extension.swift */,
 				52FA8F7D2330A6F70091EBD7 /* Utilities.swift */,
 			);
