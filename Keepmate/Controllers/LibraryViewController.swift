@@ -163,25 +163,25 @@ class LibraryViewController: UIViewController, UIScrollViewDelegate
     
     
     @objc func btnClick(btn:UIButton) {
-        print("btn")
-        let viewController = WorkoutViewController()
-        viewController.modalPresentationStyle = .fullScreen
-        switch btn.tag {
-        case 0:
-            viewController.tag = "Workout of the Day"
-        case 1:
-            viewController.tag = "Push-up"
-        case 2:
-            viewController.tag = "Sit-up"
-        case 3:
-            viewController.tag = "Plank"
-        case 4:
-            viewController.tag = "Squat"
-        default:
-            print("Error")
-            break
-        }
-        self.present(viewController, animated: true, completion: nil)
+//        switch btn.tag {
+//        case 0:
+//            viewController.tag = "Workout of the Day"
+//        case 1:
+//            viewController.tag = "Push-up"
+//        case 2:
+//            viewController.tag = "Sit-up"
+//        case 3:
+//            viewController.tag = "Plank"
+//        case 4:
+//            viewController.tag = "Squat"
+//        default:
+//            print("Error")
+//            break
+//        }
+        let sb = UIStoryboard(name:"Joint",bundle: Bundle.main)
+        let vc = sb.instantiateViewController(withIdentifier: "joint")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false, completion: nil)
     }
     
     // 1、已经开始滚动（不管是拖、拉、放大、缩小等导致）都会执行此函数

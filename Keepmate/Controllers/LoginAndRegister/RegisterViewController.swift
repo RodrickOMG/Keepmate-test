@@ -162,8 +162,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func usernameValidity(_ sender: Any) {
         if usernametextfield.text!.count > 0 {
-            print(usernametextfield.text!)
-            print(Utilities.isUsernameValid(usernametextfield.text!))
+//            print(usernametextfield.text!)
+//            print(Utilities.isUsernameValid(usernametextfield.text!))
             if Utilities.isUsernameValid(usernametextfield.text!) == false {
                 //username is illegal
                 let err = "用户名需要4-14个字符，支持中英文、数字，不允许包含特殊字符和空格"

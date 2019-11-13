@@ -11,6 +11,17 @@
 		521DA4C923582F25009791C7 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DA4C823582F25009791C7 /* UserInfo.swift */; };
 		5241F935232C80C600662488 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F934232C80C600662488 /* LoginViewController.swift */; };
 		5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F942232CD84D00662488 /* SettingsTableViewController.swift */; };
+		52484B41237C020300A56799 /* model_cpm.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52484B40237C020300A56799 /* model_cpm.mlmodel */; };
+		52484B47237C0A8C00A56799 /* UIImage+CVPixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B43237C0A8C00A56799 /* UIImage+CVPixelBuffer.swift */; };
+		52484B48237C0A8C00A56799 /* PredictedPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B44237C0A8C00A56799 /* PredictedPoint.swift */; };
+		52484B49237C0A8C00A56799 /* MovingAverageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B45237C0A8C00A56799 /* MovingAverageFilter.swift */; };
+		52484B4A237C0A8C00A56799 /* HeatmapPostProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B46237C0A8C00A56799 /* HeatmapPostProcessor.swift */; };
+		52484B4C237C0B2200A56799 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B4B237C0B2200A56799 /* VideoCapture.swift */; };
+		52484B4E237C0B7400A56799 /* Measure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B4D237C0B7400A56799 /* Measure.swift */; };
+		52484B50237C0C9F00A56799 /* DrawingJointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B4F237C0C9F00A56799 /* DrawingJointView.swift */; };
+		52484B52237C13D700A56799 /* JointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B51237C13D700A56799 /* JointViewController.swift */; };
+		52484B54237C16ED00A56799 /* Joint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52484B53237C16ED00A56799 /* Joint.storyboard */; };
+		52484B56237C18D800A56799 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52484B55237C18D800A56799 /* WorkoutViewController.swift */; };
 		5255032E235983BD00649381 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5255032D235983BC00649381 /* README.md */; };
 		52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */; };
 		52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52577EB6232BAF1300E18517 /* RegisterViewController.swift */; };
@@ -29,7 +40,6 @@
 		52EF59EB22FC68F200FC8263 /* Sunrise.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */; };
 		52EF59ED22FD07AC00FC8263 /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */; };
 		52F064E022F911A00023266D /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064DF22F911A00023266D /* LibraryViewController.swift */; };
-		52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F064E322FB00B90023266D /* WorkoutViewController.swift */; };
 		52FA8F7C232FCF010091EBD7 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8F7B232FCF010091EBD7 /* Extension.swift */; };
 		52FA8F7E2330A6F70091EBD7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FA8F7D2330A6F70091EBD7 /* Utilities.swift */; };
 		52FE03812358270400F6F7AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FE03802358270400F6F7AD /* CoreLocation.framework */; };
@@ -53,6 +63,17 @@
 		521DA4C823582F25009791C7 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		5241F934232C80C600662488 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5241F942232CD84D00662488 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		52484B40237C020300A56799 /* model_cpm.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = model_cpm.mlmodel; sourceTree = "<group>"; };
+		52484B43237C0A8C00A56799 /* UIImage+CVPixelBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+CVPixelBuffer.swift"; sourceTree = "<group>"; };
+		52484B44237C0A8C00A56799 /* PredictedPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictedPoint.swift; sourceTree = "<group>"; };
+		52484B45237C0A8C00A56799 /* MovingAverageFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingAverageFilter.swift; sourceTree = "<group>"; };
+		52484B46237C0A8C00A56799 /* HeatmapPostProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatmapPostProcessor.swift; sourceTree = "<group>"; };
+		52484B4B237C0B2200A56799 /* VideoCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		52484B4D237C0B7400A56799 /* Measure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Measure.swift; sourceTree = "<group>"; };
+		52484B4F237C0C9F00A56799 /* DrawingJointView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingJointView.swift; sourceTree = "<group>"; };
+		52484B51237C13D700A56799 /* JointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JointViewController.swift; sourceTree = "<group>"; };
+		52484B53237C16ED00A56799 /* Joint.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Joint.storyboard; sourceTree = "<group>"; };
+		52484B55237C18D800A56799 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		5255032D235983BC00649381 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndRegister.storyboard; sourceTree = "<group>"; };
 		52577EB6232BAF1300E18517 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +94,6 @@
 		52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = Sunrise.mp4; path = Keepmate/Source/Video/Sunrise.mp4; sourceTree = "<group>"; };
 		52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		52F064DF22F911A00023266D /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
-		52F064E322FB00B90023266D /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		52FA8F7B232FCF010091EBD7 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		52FA8F7D2330A6F70091EBD7 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		52FA8F8123311ACB0091EBD7 /* Keepmate-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Keepmate-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -117,6 +137,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52484B42237C0A8C00A56799 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				52484B43237C0A8C00A56799 /* UIImage+CVPixelBuffer.swift */,
+				52484B44237C0A8C00A56799 /* PredictedPoint.swift */,
+				52484B45237C0A8C00A56799 /* MovingAverageFilter.swift */,
+				52484B46237C0A8C00A56799 /* HeatmapPostProcessor.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		52577EB5232BAEDA00E18517 /* LoginAndRegister */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +171,7 @@
 		52A6D62F22D89F1400D0670B = {
 			isa = PBXGroup;
 			children = (
+				52484B40237C020300A56799 /* model_cpm.mlmodel */,
 				5255032D235983BC00649381 /* README.md */,
 				52EF59EC22FD07AC00FC8263 /* SqueezeNet.mlmodel */,
 				52EF59EA22FC68F200FC8263 /* Sunrise.mp4 */,
@@ -179,8 +211,9 @@
 				52A6D63D22D89F1400D0670B /* ViewController.swift */,
 				52A1A58C22DF7C0B000D71F2 /* ProfilelViewController.swift */,
 				52F064DF22F911A00023266D /* LibraryViewController.swift */,
-				52F064E322FB00B90023266D /* WorkoutViewController.swift */,
+				52484B51237C13D700A56799 /* JointViewController.swift */,
 				52A6D64E22D8AEA400D0670B /* BWWalkthrough */,
+				52484B55237C18D800A56799 /* WorkoutViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +230,9 @@
 		52A6D65322D8AF1A00D0670B /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				52484B4D237C0B7400A56799 /* Measure.swift */,
+				52484B4B237C0B2200A56799 /* VideoCapture.swift */,
+				52484B42237C0A8C00A56799 /* Common */,
 				52A6D65422D8AF3B00D0670B /* Models */,
 				52FA8F7B232FCF010091EBD7 /* Extension.swift */,
 				52FA8F7D2330A6F70091EBD7 /* Utilities.swift */,
@@ -215,6 +251,7 @@
 		52A6D65522D8AF4D00D0670B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				52484B4F237C0C9F00A56799 /* DrawingJointView.swift */,
 				52A6D65622D8B2DD00D0670B /* Storyboards */,
 			);
 			path = Views;
@@ -228,6 +265,7 @@
 				52577EB3232B83AE00E18517 /* LoginAndRegister.storyboard */,
 				52A6D64422D89F1500D0670B /* LaunchScreen.storyboard */,
 				529262B8234301AF00C7E24D /* Settings.storyboard */,
+				52484B53237C16ED00A56799 /* Joint.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -357,6 +395,7 @@
 				52A6D64622D89F1500D0670B /* LaunchScreen.storyboard in Resources */,
 				52577EB4232B83AE00E18517 /* LoginAndRegister.storyboard in Resources */,
 				52A6D65A22D8B77B00D0670B /* Assets.xcassets in Resources */,
+				52484B54237C16ED00A56799 /* Joint.storyboard in Resources */,
 				529262B9234301AF00C7E24D /* Settings.storyboard in Resources */,
 				5255032E235983BD00649381 /* README.md in Resources */,
 				52A6D64122D89F1400D0670B /* Main.storyboard in Resources */,
@@ -413,22 +452,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				529262BC23430B4F00C7E24D /* AccountSettingsTableViewController.swift in Sources */,
+				52484B50237C0C9F00A56799 /* DrawingJointView.swift in Sources */,
+				52484B48237C0A8C00A56799 /* PredictedPoint.swift in Sources */,
+				52484B4E237C0B7400A56799 /* Measure.swift in Sources */,
 				52577EB7232BAF1300E18517 /* RegisterViewController.swift in Sources */,
 				520BCFE22346F7FA0012C8DA /* UpdateProfileInfoTableViewCell.swift in Sources */,
 				529262BF23433DCC00C7E24D /* UpdateProfileInfoViewController.swift in Sources */,
-				52F064E422FB00B90023266D /* WorkoutViewController.swift in Sources */,
+				52484B52237C13D700A56799 /* JointViewController.swift in Sources */,
 				521DA4C923582F25009791C7 /* UserInfo.swift in Sources */,
+				52484B47237C0A8C00A56799 /* UIImage+CVPixelBuffer.swift in Sources */,
 				52A6D65222D8AEE700D0670B /* BWWalkthroughViewController.swift in Sources */,
 				52FA8F7C232FCF010091EBD7 /* Extension.swift in Sources */,
 				52FA8F7E2330A6F70091EBD7 /* Utilities.swift in Sources */,
+				52484B41237C020300A56799 /* model_cpm.mlmodel in Sources */,
+				52484B56237C18D800A56799 /* WorkoutViewController.swift in Sources */,
 				5241F943232CD84D00662488 /* SettingsTableViewController.swift in Sources */,
 				52A6D65122D8AEE700D0670B /* BWWalkthroughPageViewController.swift in Sources */,
 				52EF59ED22FD07AC00FC8263 /* SqueezeNet.mlmodel in Sources */,
 				52A6D63E22D89F1400D0670B /* ViewController.swift in Sources */,
 				52A1A58D22DF7C0B000D71F2 /* ProfilelViewController.swift in Sources */,
+				52484B4C237C0B2200A56799 /* VideoCapture.swift in Sources */,
+				52484B49237C0A8C00A56799 /* MovingAverageFilter.swift in Sources */,
 				52F064E022F911A00023266D /* LibraryViewController.swift in Sources */,
 				5241F935232C80C600662488 /* LoginViewController.swift in Sources */,
 				52A6D63C22D89F1400D0670B /* AppDelegate.swift in Sources */,
+				52484B4A237C0A8C00A56799 /* HeatmapPostProcessor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

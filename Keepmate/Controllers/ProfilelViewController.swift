@@ -40,7 +40,10 @@ class ProfileViewController: UIViewController, UIScrollViewDelegate, UIImagePick
             print(profilePicFile!.url)
             guard let url = URL(string: profilePicFile!.url!) else { return }
             let data = try?Data(contentsOf: url)
-            profilePicButton.setImage(UIImage(data: data!), for: .normal)
+            if data != nil {
+                profilePicButton.setImage(UIImage(data: data!), for: .normal)
+            }
+            
         }
     }
     

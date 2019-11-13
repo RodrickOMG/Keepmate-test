@@ -13,7 +13,7 @@ class UserInfo {
     let userDefaults = UserDefaults.standard
     
     
-    static func upload(_ filePath: String) -> String{
+    static func upload(_ filePath: String){
         let user = BmobUser.current()
         let file = BmobFile.init(filePath: filePath)
         
@@ -34,8 +34,6 @@ class UserInfo {
         }, withProgressBlock: { (process) in
             print("process:  ", process)
         })
-        
-        return file!.url
     }
      
     
